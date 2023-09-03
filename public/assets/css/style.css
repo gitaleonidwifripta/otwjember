@@ -1,0 +1,2427 @@
+body {
+    font-family: 'Poppins';
+    background-color: #F5F5F5;
+}
+
+.content {
+    min-height: 100vh;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    #card-booking {
+        position: relative;
+    }
+
+    .card-body .card-title {
+        font-size: 12px;
+        margin-left: 0rem;
+    }
+
+    .ratings {
+        padding-top: 0;
+    }
+
+
+
+    .col-md-6.review {
+        width: 100% !important;
+    }
+
+    .pt-5.review {
+        padding-top: 7rem !important;
+    }
+
+
+
+    span.number {
+        font-size: 8px;
+    }
+
+    h6.txt-tiket {
+        font-size: 9px;
+        text-align: center;
+    }
+
+    p.txt-harga {
+        font-size: 8px;
+        color: #d40000;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .btn-primary {
+        font-size: 10px;
+
+    }
+
+}
+
+.card-profile {
+    margin-top: 15%;
+}
+
+.card-review {
+    border-radius: 20px;
+}
+
+.card2 .card-detail {
+    padding-top: 20px;
+}
+
+
+.img-card {
+    width: 100px;
+    position: absolute;
+    top: -30%;
+    left: 5%;
+    margin: 5px;
+    border: solid #ffff 5px;
+}
+
+.img-cover {
+    object-fit: cover;
+    object-position: center;
+}
+
+.circle-bg {
+    background-size: 300px;
+    background-position: right top, left bottom;
+    background-image: url(../img/decoration.png), url(../img/decoration-left.png);
+    background-repeat: no-repeat;
+    right: 0%;
+    left: 0%;
+}
+
+.review {
+    position: relative;
+}
+
+.subscribe {
+    background-color: #ffff;
+}
+
+/* .email-sub {
+    display: inline-flex;
+} */
+
+.footer {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    background-color: #0099D4;
+}
+
+.footer-right {
+    text-align: right;
+}
+
+.detailorder {
+    padding: 1.5rem;
+}
+
+/* The side navigation menu */
+.sidebar {
+    margin: 0;
+    padding: 0;
+    width: 300px;
+    background-color: #f1f1f1;
+    position: fixed;
+    height: 100%;
+    overflow: hidden;
+}
+
+/* Sidebar links */
+.sidebar a {
+    display: block;
+    color: white;
+    padding: 16px;
+    text-decoration: none;
+}
+
+/* Page content. The value of the margin-left property should match the value of the sidebar's width property */
+div.content {
+    margin-left: 300px;
+    padding: 1px 16px;
+}
+
+.form-title .form-body {
+    align-items: center;
+}
+
+/* edit profile */
+.circular-image .img {
+    border-radius: 50%;
+}
+
+
+@media only screen and (min-width: 320px) {
+    div.header {
+        position: relative;
+    }
+
+    @media (min-width: 320px) {
+
+        /* Beranda */
+        h1.welcoming {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        h1.sub-welcom {
+            font-size: 18px;
+        }
+
+        .card-body .card-title {
+            font-size: 14px;
+            margin-left: 1rem;
+            margin-top: 0.5rem;
+            font-weight: bold;
+        }
+
+        div.small-ratings {
+            margin-top: 3px;
+            margin-bottom: 3px;
+            font-size: 10px;
+            padding-left: 1rem;
+        }
+
+        div.small-ratings.review {
+            margin-top: 0px;
+            margin-bottom: 3px;
+            font-size: 10px;
+            padding-left: 0px;
+        }
+
+        i.fa.fa-star.rating-color {
+            color: #fbc634;
+        }
+
+        p.card-text.location {
+            font-size: 10px;
+            margin-bottom: 5px;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            max-width: 150ch;
+            overflow: hidden;
+            text-align: initial;
+        }
+
+        p.txt-info {
+            font-size: 10px;
+            margin-bottom: 3px;
+            margin-top: 3px;
+        }
+
+        p.txt-jam {
+            font-size: 12px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        p.badge.bg-danger.badge-rekom {
+            font-size: 12px;
+            padding: 8px;
+        }
+
+        p.badge.bg-success.badge-rekom {
+            font-size: 12px;
+            padding: 8px;
+        }
+
+        p.txt-harga {
+            font-size: 12px;
+            color: #d40000;
+            font-weight: bold;
+            text-align: left;
+        }
+
+        button.btn.btn-primary.pesan {
+            font-size: 14px;
+            float: right;
+            margin-right: 5px;
+            width: 80px;
+            margin-top: 5px;
+            margin-inline-end: auto;
+        }
+
+        .card-body-review {
+            flex-grow: 1;
+            flex-shrink: 1;
+            flex-basis: auto;
+            padding-right: 1rem;
+            padding-bottom: 2rem;
+            padding-left: 1rem;
+        }
+
+        h5.card-title-review {
+            padding-left: 1rem;
+            padding-bottom: 0.5rem;
+            font-weight: bold;
+            font-size: 12px;
+        }
+
+        p.card-text-review {
+            padding-left: 1rem;
+            padding-right: 1rem;
+            font-size: 12px;
+        }
+
+        h2.accordion-header button.accordion-button {
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .icon-otw {
+            padding-left: 10px;
+            height: 25px;
+        }
+
+        .icon-logo {
+            padding-left: 5px;
+            height: 25px;
+        }
+
+        div.review {
+            margin-top: -70px;
+        }
+
+        .welcoming-text {
+            position: relative;
+            z-index: 10;
+            top: -120px;
+        }
+
+        .form-booking {
+            display: none;
+        }
+
+        .form-booking {
+            position: relative;
+            z-index: 10;
+            top: -200px;
+        }
+
+        .mobile-booking {
+            position: relative;
+            z-index: 10;
+            top: -100px;
+            padding-left: 5%;
+            padding-right: 5%;
+            border: none;
+        }
+
+        .input-book {
+            border: none;
+        }
+
+        .mobile-book {
+            background-color: transparent !important;
+            border: none !important;
+        }
+
+        select#destinasi {
+            font-size: 12px;
+        }
+
+        select#hari {
+            font-size: 12px;
+        }
+
+        select#jam {
+            font-size: 12px;
+        }
+
+        button.btn-pilih {
+            font-size: 12px;
+        }
+
+        .txt-section {
+            font-size: 15px !important;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .txt-subtitle {
+            font-size: 10px !important;
+            text-align: center;
+        }
+
+        div.rekomen {
+            position: relative;
+            padding-top: 10px;
+            top: -100px;
+        }
+
+        .card-img-top {
+            width: 100%;
+            height: 30vh;
+            object-fit: cover;
+        }
+
+        h4.detail {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .txt-booking {
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .btn .btn-primary {
+            font-size: 10px;
+            padding: 10px 24px;
+        }
+
+
+        .title-section h2 {
+            text-align: center;
+            font-weight: bold;
+            padding-top: 1rem;
+            font-size: 16px;
+        }
+
+        .sub-title {
+            text-align: center;
+            font-size: 14px;
+            padding-bottom: 10px;
+        }
+
+        p.info-txt {
+            font-size: 12px;
+            margin-bottom: 8px;
+            margin-top: 0px;
+            text-align: center;
+        }
+
+        h5.info-txt {
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 3px;
+        }
+
+        div.subscribe {
+            display: none;
+        }
+
+        div.btn-saran {
+            text-align: center;
+        }
+
+        .small-ratings i {
+            color: #cecece;
+            font-size: 10px;
+        }
+
+        .btn-saran .btn {
+            width: 300px;
+            font-size: 12px;
+            text-align: center;
+        }
+
+        p.pt-2 {
+            font-size: small;
+        }
+
+        h5.informasi {
+            font-size: medium;
+        }
+
+        ul.kontak {
+            font-size: small;
+        }
+
+
+        p.card-text {
+            color: #FFFFFF;
+        }
+
+        p.card-text {
+            color: #767676;
+            font-size: 10px;
+            margin-left: 1rem;
+            margin-right: 1rem;
+            text-align: justify;
+        }
+
+        h6.harga {
+            font-size: 10px;
+            color: #767676;
+            text-align: center;
+        }
+
+        p.jumlah {
+            margin-top: auto;
+            font-size: 12px;
+            text-align: center;
+            color: red;
+            font-weight: 600;
+        }
+
+        .garis-vertikal {
+            border-left: 1px;
+            height: auto;
+        }
+
+        .img-card {
+            width: 80px;
+            position: absolute;
+            top: -20%;
+            left: 5%;
+            margin: 5px;
+            border: solid #ffff 5px;
+        }
+
+        .form-check .rating {
+            margin-left: 1rem;
+        }
+
+        p.card-text.location {
+            font-size: 10px;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            max-width: 150ch;
+            overflow: hidden;
+            text-align: initial;
+        }
+
+        .order {
+            font-size: 10px;
+            padding: 30 30 40 30;
+        }
+
+        .card-body.data {
+            padding: 15 30 30 15;
+        }
+
+
+        /* total form detail */
+        .subdetail {
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .breadcrumb.form-order{
+            font-size: 12px;
+        }
+
+        p.subdetail-text {
+            font-weight: 500;
+            font-size: 12px;
+        }
+
+        .info-text {
+            font-size: 10px;
+            margin-bottom: 5px;
+        }
+
+        .date-text {
+            font-weight: bold;
+            font-size: 10px;
+            margin-bottom: 10px;
+        }
+
+        .harga-right {
+            text-align: right;
+        }
+
+        p.total {
+            font-size: 10px;
+            font-weight: bold;
+            color: red;
+        }
+
+        h4.detail {
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        h4.detail-metode {
+            font-size: 12px;
+            font-weight: bold;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        .bank-text {
+            font-size: 10px;
+            font-weight: 400;
+        }
+
+        .subbank-text {
+            font-size: 12px;
+            font-weight: 500;
+            margin-left: 5px;
+            position: inherit;
+        }
+
+        img.img-bank {
+            width: 58px;
+            height: 18px;
+        }
+
+        .detail {
+            font-weight: 600;
+            font-size: 12px;
+        }
+
+        .harga-text {
+            font-weight: 400;
+            font-size: 12px;
+            text-align: left;
+        }
+
+        .form-check-input {
+            margin-left: px;
+        }
+
+        /* detail wisata */
+        div.form-wisata {
+            display: none;
+        }
+
+        h2.card-title-wisata {
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .bg-rev {
+            background-color: #237DFE;
+        }
+
+        div.card-title-tiket {
+            padding-top: -20%;
+        }
+
+        div.warning {
+            text-align: center;
+        }
+
+        div.warning div.title-section-wisata h3 {
+            padding-top: 25px;
+        }
+
+        .text-day {
+            background-color: rgb(209, 209, 209);
+            display: inline-block;
+            padding-left: 40px;
+            padding-right: 40px;
+        }
+
+        div.btn-pesan {
+            text-align: center;
+        }
+
+        .btn-pesan .btn {
+            width: 300px;
+            font-size: 18px;
+        }
+
+        h2.card-title-wisata {
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        p.card-text-wisata {
+            font-size: 10px;
+        }
+
+        div.card-wisata .card {
+            border-radius: 0px;
+            border: 0px;
+        }
+
+        div.owl-stage {
+            height: auto;
+        }
+
+        p.txt-info-tiket {
+            font-size: 12px;
+            margin-bottom: 0px;
+            margin-top: 10px;
+        }
+
+        p.txt-jam-tiket {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 0px;
+        }
+
+        p.badge.bg-danger.badge-tiket {
+            font-size: 12px;
+            padding: 8px;
+            margin-bottom: 0px;
+        }
+
+        p.badge.bg-success.badge-tiket {
+            font-size: 12px;
+            padding: 8px;
+            margin-bottom: 0px;
+        }
+
+        p.card-text-tiket {
+            color: red;
+            font-weight: bold;
+            font-size: 16px;
+            margin-top: 0px;
+        }
+
+        /* -------------------------------------------------------------- */
+        /* ----------------------riwayat--------------------------------- */
+        /* -------------------------------------------------------------- */
+        div.riwayat {
+            margin-top: 1rem;
+        }
+
+        i.fa-regular {
+            color: green;
+        }
+
+        .btn.btn-primary.riwayat{
+            display: none;
+            padding-left: 0px;
+        }
+
+        .container.table-riwayat{
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .input-group {
+            justify-content: left;
+        }
+
+        .input-group .btn {
+            font-size: 16px;
+        }
+
+        hr {
+            size: 6px;
+        }
+
+        h2.riwayat-title{
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        h6.riwayat-sub-title{
+            font-size: 12px;
+        }
+
+        img.icon-table{
+            width: 10vh;
+        }
+
+        h6.font-riwayat{
+            font-size: 14px;
+        }
+
+        h6.font-sub-riwayat{
+            font-size: 12px;
+        }
+
+        /*-------------- edit profile----------------------------
+        ------------------------------------------------------ */
+
+        .container.profile{
+            padding: 1rem;
+        }
+
+        .circular-image .img {
+            border-radius: 50%;
+        }
+
+        h4.profile{
+            font-weight: bold;
+        }
+
+        .rounded-circle.profile{
+            width: 150px;
+            height: 150px;
+        }
+
+        button.btn.btn-primary.btn-foto {
+            font-size: 10px;
+            border-radius: 50%;
+            margin-top: -70px;
+            z-index: auto;
+            margin-left: 110px;
+            border-style: solid;
+            border-width: 5px;
+            border-color: white;
+        }
+
+        .btn-up .btn {
+            font-size: 14px;
+            margin-bottom: 2rem;
+            margin-top: 1rem;
+            display: grid;
+            gap: 2;
+        }
+
+        .edit-body.profile{
+            padding: 0rem 1rem;
+        }
+
+        /* ---------------------ubah password--------------------
+        --------------------------------------------------------- */
+
+        .card.change-pass{
+            position: relative;
+        }
+
+        .btn-change .btn.change-pass.mobile{
+            margin-bottom: 0.375rem;
+            margin-top: 0.375rem;
+            font-size: 1rem;
+        }
+
+
+        /* feedback */
+        .nota2.card-body{
+            padding: 1rem;
+            margin-top: 10px;
+        }
+
+        .h6.feedback
+        {
+            text-align: justify;
+            margin-top: 20px;
+        }
+
+        h5.fw-bold.kontak{
+            font-size: 14px;
+            margin-left: 1rem;
+        }
+
+        p.card-text.feedback{
+            font-size: 10px;
+            margin-left: 1rem;
+            margin-right: 1rem;
+            margin-bottom: 5px;
+        }
+
+        input.form-control.feedback{
+            font-size: 12px;
+        }
+
+        textarea#pesan.form-control.feedback{
+            font-size: 12px;
+            min-height: 150px;
+        }
+
+        /*card booking */
+        div.row.booking{
+            padding: 0.5rem;
+        }
+
+        h3.card-title.wisata{
+            font-weight: bold;
+            font-size: 12px;
+        }
+
+        div.small-ratings.booking {
+            margin-bottom: 3px;
+            font-size: 10px;
+            padding-left: 1rem;
+            margin-left: -15px;
+        }
+
+        p.txt-location{
+            font-size: 8px;
+            margin-bottom: 5px;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            max-width:150ch;
+            overflow: hidden;
+        }
+
+        .card-img-left {
+            width: 100%;
+            height: 50%;
+            object-fit: cover;
+            height: -webkit-fill-available;
+        }
+
+        p.txt-info-booking {
+            font-size: 8px;
+            margin-bottom: 5px;
+        }
+
+        p.txt-jam-booking {
+            font-size: 8px;
+        }
+
+        p.badge.bg-success.badge-list {
+            font-size: 8px;
+            padding: 4px;
+        }
+
+        p.badge.bg-danger.badge-list {
+            font-size: 8px;
+            padding: 4px;
+        }
+
+        p.badge.bg-danger.badge-list {
+            font-size: 8px;
+            padding: 4px;
+        }
+
+        h6.txt-tiket.booking {
+            font-size: 8px;
+            text-align: center;
+        }
+
+        p.txt-harga.booking {
+            font-size: 6px;
+            color: #d40000;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        button.btn.btn-primary.pesan-booking {
+            margin-top: -1rem;
+            font-size: 8px;
+            margin-right: 5px;
+            width: 50px;
+        }
+
+    }
+
+    @media (min-width: 768px) {
+
+
+        .carousel-inner .carousel-item-end.active,
+        .carousel-inner .carousel-item-next {
+            transform: translateX(25%);
+        }
+
+        .carousel-inner .carousel-item-start.active,
+        .carousel-inner .carousel-item-prev {
+            transform: translateX(-25%);
+        }
+
+
+        .carousel-control-next {
+            filter: invert(100%);
+            right: -8%;
+        }
+
+        .carousel-control-prev {
+            filter: invert(100%);
+            left: -8%;
+        }
+
+        .carousel-inner .carousel-item-end,
+        .carousel-inner .carousel-item-start {
+            transform: translateX(0);
+        }
+
+        .welcoming-text {
+            position: relative;
+            z-index: 10;
+            /* width: 400px; */
+            top: -250px;
+        }
+
+        h1.welcoming {
+            font-size: 32px;
+            font-weight: bold;
+        }
+
+        h1.sub-welcom {
+            font-size: 32px;
+        }
+
+        .form-booking {
+            visibility: visible;
+        }
+
+        .form-booking {
+            display: block;
+            position: relative;
+            z-index: 10;
+            /* width: 400px; */
+            top: -200px;
+        }
+
+        .mobile-booking {
+            display: none;
+        }
+
+        select#destinasi {
+            font-size: 12px;
+        }
+
+        select#hari {
+            font-size: 12px;
+        }
+
+        select#jam {
+            font-size: 12px;
+        }
+
+        button.btn-pilih {
+            font-size: 12px;
+        }
+
+        div.rekomen {
+            position: relative;
+            top: -100px;
+        }
+
+        p.txt-info {
+            font-size: 8px;
+            margin-bottom: 5px;
+            margin-top: 0px;
+        }
+
+        p.txt-jam {
+            font-size: 12px;
+            text-align: center;
+        }
+
+        p.txt-harga {
+            font-size: 10px;
+            color: #d40000;
+            font-weight: bold;
+            padding-left: 0px;
+        }
+
+        p.badge.bg-danger.badge-rekom {
+            font-size: 10px;
+        }
+
+        p.badge.bg-success.badge-rekom {
+            font-size: 10px;
+        }
+
+        button.btn.btn-primary.pesan {
+            font-size: 10px;
+            float: right;
+            margin-right: 5px;
+            width: 60px;
+            margin-inline-end: auto;
+        }
+
+        .card-body .card-title {
+            font-size: 18px;
+            margin-left: 1rem;
+            margin-top: 0.5rem;
+        }
+
+        p.card-text {
+            color: #767676;
+            font-size: 14px;
+            margin-left: 1rem;
+            margin-right: 1rem;
+            margin-bottom: 5px;
+        }
+
+        h5.card-title-review {
+            padding-left: 1rem;
+            padding-bottom: 0.5rem;
+            font-weight: bold;
+            font-size: 12px;
+        }
+
+        .title-section h2 {
+            text-align: center;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .sub-title {
+            text-align: center;
+            font-size: 16px;
+        }
+
+        p.pt-2 {
+            font-size: 14px;
+        }
+
+        h5.informasi {
+            font-size: 16px;
+        }
+
+        ul.kontak {
+            font-size: 14px;
+        }
+
+        /* riwayat */
+        .input-group {
+            justify-content: right;
+        }
+
+        /* -------------------------------------------------------------- */
+        /* ----------------------riwayat--------------------------------- */
+        /* -------------------------------------------------------------- */
+        div.riwayat {
+            margin-top: 3rem;
+        }
+
+        i.fa-regular {
+            color: green;
+        }
+
+        .btn.btn-primary.riwayat{
+            display: block;
+            padding-left: 0px;
+            padding: 10px;
+        }
+
+        .btn.btn-primary.mobile-riwayat{
+            display: none;
+            padding-left: 0px;
+        }
+
+        .container.table-riwayat{
+            margin-top: 4rem;
+            margin-bottom: 5rem;
+        }
+
+        .input-group {
+            justify-content: left;
+        }
+
+        .input-group .btn {
+            font-size: 16px;
+        }
+
+        hr {
+            size: 6px;
+        }
+
+        h2.riwayat-title{
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        h6.riwayat-sub-title{
+            font-size: 20px;
+        }
+
+        img.icon-table{
+            width: 10vh;
+        }
+
+        h6.font-riwayat{
+            font-size: 14px;
+        }
+
+        h6.font-sub-riwayat{
+            font-size: 12px;
+        }
+
+
+        /* --------------------------------------------------------------------------------- */
+        /* detail wisata */
+        div.mobile-wisata {
+            display: none;
+        }
+
+        div.form-wisata {
+            display: block;
+            position: relative;
+        }
+
+        h2.detail-wisata{
+            padding-top: 1rem;
+        }
+
+        div.card-title-tiket {
+            padding-top: -20%;
+        }
+
+        .text-day {
+            background-color: rgb(209, 209, 209);
+            display: inline-block;
+            padding-left: 40px;
+            padding-right: 40px;
+        }
+
+        .form-title .form-body {
+            align-items: center;
+        }
+
+        div.btn-pesan {
+            text-align: center;
+        }
+
+        div.card-body-detail{
+            padding: 0px 10px;
+        }
+
+
+        .card-img-wisata {
+            width: 100%;
+            height: -webkit-fill-available;
+            object-fit: cover;
+        }
+
+        div.small-ratings.wisata {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            font-size: 12px;
+            padding-left: 0px;
+        }
+
+
+        .btn-pesan .btn {
+            width: 400px;
+            font-size: 18px;
+        }
+
+        p.txt-info-tiket {
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+
+        p.txt-jam-tiket {
+            font-size: 20px;
+        }
+
+        .title-section-wisata {
+            text-align: center;
+            padding-top: 2rem;
+        }
+
+        p.card-text-tiket {
+            color: red;
+            font-weight: bold;
+            font-size: 17.6px;
+        }
+
+        div.card-title-tiket div.text-day {
+            margin-top: -20%;
+        }
+
+        div.warning div.title-section-wisata h3 {
+            padding-top: 0px;
+        }
+
+        h2.card-title-wisata {
+            font-weight: bold;
+            font-size: 30px;
+        }
+
+        p.card-text-wisata {
+            font-size: 12px;
+            text-align: justify;
+        }
+
+        p.badge.bg-danger.badge-tiket {
+            font-size: 16px;
+            padding: 8px;
+        }
+
+        p.badge.bg-success.badge-tiket {
+            font-size: 16px;
+            padding: 8px;
+        }
+
+        /* feedback */
+        .nota2.card-body{
+            padding: 1rem;
+            margin-top: 10px;
+        }
+
+        .h6.feedback
+        {
+            text-align: justify;
+            margin-top: 20px;
+        }
+
+        .nota.card-body.kontak{
+            padding-bottom: 6rem;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            padding-top: 1rem;
+        }
+
+        h5.fw-bold.kontak{
+            font-size: 16px;
+            margin-left: 1rem;
+        }
+
+        p.card-text.feedback{
+            font-size: 10px;
+            margin-left: 1rem;
+            margin-right: 1rem;
+            margin-bottom: 5px;
+        }
+
+        input.form-control.feedback{
+            font-size: 14px;
+        }
+
+        textarea#pesan.form-control.feedback{
+            font-size: 14px;
+            min-height: 150px;
+        }
+
+
+        /* total form detail, detail pesanan */
+        .subdetail {
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .breadcrumb.form-order{
+            font-size: 14px;
+        }
+
+        p.subdetail-text {
+            font-weight: 500;
+            font-size: 12px;
+        }
+
+        .info-text {
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .date-text {
+            font-weight: bold;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .harga-right {
+            text-align: right;
+        }
+
+        p.total {
+            font-size: 14px;
+            font-weight: bold;
+            color: red;
+        }
+
+        h4.detail {
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        h4.detail-metode {
+            font-size: 16px;
+            font-weight: bold;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        .bank-text {
+            font-size: 12px;
+            font-weight: 400;
+        }
+
+        .subbank-text {
+            font-size: 14px;
+            font-weight: 500;
+            margin-left: 5px;
+            position: inherit;
+        }
+
+        /*card booking */
+        div.row.booking{
+            padding: 0.5rem;
+        }
+
+        h3.card-title.wisata{
+            font-weight: bold;
+            font-size: 12px;
+        }
+
+        div.small-ratings.booking {
+            margin-top: 0px;
+            margin-bottom: 3px;
+            font-size: 10px;
+            padding-left: 1rem;
+            margin-left: -15px;
+        }
+
+        p.txt-location{
+            font-size: 8px;
+            margin-bottom: 5px;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            max-width:150ch;
+            overflow: hidden;
+        }
+
+        .card-img-left {
+            width: 100%;
+            height: 50%;
+            object-fit: cover;
+            height: -webkit-fill-available;
+        }
+
+        p.txt-info-booking {
+            font-size: 10px;
+            margin-bottom: 5px;
+        }
+
+        p.txt-jam-booking {
+            font-size: 10px;
+        }
+
+        p.badge.bg-success.badge-list {
+            font-size: 10px;
+            padding: 6px;
+            margin-top: 10px;
+        }
+
+        p.badge.bg-danger.badge-list {
+            font-size: 10px;
+            padding: 6px;
+            margin-top: 10px;
+        }
+
+        h6.txt-tiket.booking {
+            font-size: 8px;
+            text-align: center;
+        }
+
+        p.txt-harga.booking {
+            font-size: 8px;
+            color: #d40000;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        button.btn.btn-primary.pesan-booking {
+            margin-top: -1rem;
+            font-size: 8px;
+            margin-right: 5px;
+            width: 50px;
+            margin-top: -20px;
+        }
+
+        /* -------------------------------------------------- */
+
+                /*-------------- edit profile----------------------------
+        ------------------------------------------------------ */
+
+        .container.profile{
+            padding: 1rem;
+        }
+
+        .circular-image .img {
+            border-radius: 50%;
+        }
+
+        h4.profile{
+            font-weight: bold;
+        }
+
+        .rounded-circle.profile{
+            width: 150px;
+            height: 150px;
+        }
+
+        button.btn.btn-primary.btn-foto {
+            font-size: 12px;
+            border-radius: 50%;
+            margin-top: -70px;
+            z-index: auto;
+            margin-left: 110px;
+            border-style: solid;
+            border-width: 5px;
+            border-color: white;
+        }
+
+        .btn-up .btn {
+            font-size: 14px;
+            margin-bottom: 2rem;
+            margin-top: 1rem;
+            display: inline-block;
+        }
+
+        .edit-body.profile{
+            padding: 0rem 1rem;
+        }
+
+        /* ---------------------ubah password--------------------
+        --------------------------------------------------------- */
+
+        .card.change-pass{
+            position: relative;
+        }
+
+
+
+
+    }
+
+    @media (min-width: 992px) {
+        .navbar-expand-lg .navbar-nav .nav-link {
+            padding-right: 1rem;
+            padding-left: 1rem;
+        }
+
+        .btn-login {
+            margin-left: 1rem;
+            /* border-radius: 20px; */
+        }
+
+        #img-header {
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            position: absolute;
+            z-index: 0;
+            /* margin-top: -50px; */
+        }
+
+        .welcoming-text {
+            position: relative;
+            z-index: 10;
+            /* width: 400px; */
+            top: 150px;
+        }
+
+        h1.welcoming {
+            font-size: 36px;
+            font-weight: bold;
+        }
+
+        h1.sub-welcom {
+            font-size: 36px;
+        }
+
+        .form-booking {
+            position: relative;
+            z-index: 10;
+            /* width: 400px; */
+            top: 250px;
+        }
+
+        .icon-otw {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+        }
+
+        .icon-logo {
+            height: 20px;
+        }
+
+        div.header {
+            height: 600px;
+        }
+
+        .title-section {
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .sub-title {
+            text-align: center;
+        }
+
+        .ratings {
+            margin-right: 10px;
+        }
+
+        .ratings i {
+
+            color: #cecece;
+            font-size: 10px;
+        }
+
+        .rating-color {
+            color: #fbc634 !important;
+        }
+
+        .review-count {
+            font-weight: 400;
+            margin-bottom: 2px;
+            font-size: 20px !important;
+        }
+
+        .small-ratings i {
+            color: #cecece;
+            font-size: 10px;
+        }
+
+        .review-stat {
+            font-weight: 300;
+            font-size: 10px;
+            margin-bottom: 2px;
+        }
+
+        .card-text.location {
+            font-size: 10px;
+        }
+
+        div.location {
+            font-size: 10px;
+            text-align: justify;
+        }
+
+        hr {
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            border: 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .info-destination {
+            font-size: 12px;
+            text-align: center;
+        }
+
+        .harga-tiket {
+            font-size: 12px;
+            margin-left: 11px;
+        }
+
+        p.txt-info {
+            margin-bottom: 3px !important;
+        }
+
+        p.txt-harga {
+            margin-bottom: 10px !important;
+            color: red;
+        }
+
+        .bg-rev {
+            background-color: #237DFE;
+        }
+
+    }
+
+    @media (min-width: 1024px) {
+
+        /* beranda */
+        .welcoming-text {
+            position: relative;
+            z-index: 10;
+            /* width: 400px; */
+            top: 100px;
+        }
+
+        h1.welcoming {
+            font-size: 40px;
+            font-weight: bold;
+        }
+
+        h1.sub-welcom {
+            font-size: 40px;
+        }
+
+        div.title-section {
+            padding-top: 4rem;
+        }
+
+        .form-booking {
+            visibility: visible;
+        }
+
+        h2.txt-section {
+            font-size: 38px;
+            font-weight: bold;
+        }
+
+        .form-booking {
+            display: block;
+            position: relative;
+            z-index: 10;
+            /* width: 400px; */
+            top: 200px;
+        }
+
+        div.rekomen {
+            position: relative;
+            padding-top: 20px;
+            top: -50px;
+        }
+
+        div.header {
+            height: 450px;
+        }
+
+        div.review {
+            margin-top: -1rem;
+        }
+
+        /* Beranda Rekomendasi Tempat */
+
+        .card-body .card-title {
+            font-size: 14px;
+            margin-left: 1rem;
+            margin-top: 0.5rem;
+            font-weight: bold;
+        }
+
+        div.small-ratings {
+            margin-top: 3px;
+            margin-bottom: 3px;
+            font-size: 10px;
+            padding-left: 1rem;
+        }
+
+        div.small-ratings.review {
+            margin-top: 0px;
+            margin-bottom: 3px;
+            font-size: 10px;
+            padding-left: 0px;
+        }
+
+        h5.card-title-review {
+            padding-left: 1rem;
+            padding-bottom: 0.5rem;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        i.fa.fa-star.rating-color {
+            color: #fbc634;
+        }
+
+        p.card-text.location {
+            font-size: 10px;
+            margin-bottom: 5px;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            max-width: 150ch;
+            overflow: hidden;
+            text-align: initial;
+        }
+
+        p.txt-info {
+            font-size: 10px;
+            margin-bottom: 3px;
+            margin-top: 3px;
+        }
+
+        p.txt-jam {
+            font-size: 12px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        p.badge.bg-danger {
+            font-size: 12px;
+            padding: 8px;
+        }
+
+        p.txt-harga {
+            font-size: 10px;
+            color: #d40000;
+            font-weight: bold;
+            text-align: left;
+        }
+
+        .harga-tiket {
+            font-size: 12px;
+            margin-left: 0px;
+        }
+
+        button.btn.btn-primary.pesan {
+            font-size: 10px;
+            float: right;
+            margin-right: 5px;
+            width: 60px;
+            margin-top: 10px;
+            margin-inline-end: auto;
+        }
+
+        .button-pesam {
+            margin-left: 10px;
+        }
+
+        /* --------------------------------------------------------------------------------- */
+        /* detail wisata */
+        div.mobile-wisata {
+            display: none;
+        }
+
+        div.form-wisata {
+            display: block;
+            position: relative;
+        }
+
+        h2.detail-wisata{
+            padding-top: 0px;
+        }
+
+        div.card-title-tiket {
+            padding-top: -20%;
+        }
+
+        .text-day {
+            background-color: rgb(209, 209, 209);
+            display: inline-block;
+            padding-left: 40px;
+            padding-right: 40px;
+        }
+
+        .form-title .form-body {
+            align-items: center;
+        }
+
+        div.btn-pesan {
+            text-align: center;
+        }
+
+        div.card-body-detail{
+            padding: 0px 10px;
+        }
+
+
+        .card-img-wisata {
+            width: 100%;
+            height: -webkit-fill-available;
+            object-fit: cover;
+        }
+
+        div.small-ratings.wisata {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            font-size: 12px;
+            padding-left: 0px;
+        }
+
+
+        .btn-pesan .btn {
+            width: 400px;
+            font-size: 18px;
+        }
+
+        p.txt-info-tiket {
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+
+        p.txt-jam-tiket {
+            font-size: 20px;
+        }
+
+        .title-section-wisata {
+            text-align: center;
+            padding-top: 2rem;
+        }
+
+        p.card-text-tiket {
+            color: red;
+            font-weight: bold;
+            font-size: 17.6px;
+        }
+
+        div.card-title-tiket div.text-day {
+            margin-top: -20%;
+        }
+
+        div.warning div.title-section-wisata h3 {
+            padding-top: 0px;
+        }
+
+        h2.card-title-wisata {
+            font-weight: bold;
+            font-size: 30px;
+        }
+
+        p.card-text-wisata {
+            font-size: 12px;
+            text-align: justify;
+        }
+
+        p.badge.bg-danger.badge-tiket {
+            font-size: 16px;
+            padding: 8px;
+        }
+
+        /* feedback */
+        .nota2.card-body{
+            padding: 2rem;
+            margin-top: 10px;
+        }
+
+        .h6.feedback
+        {
+            text-align: justify;
+            margin-top: 20px;
+        }
+
+        .nota.card-body.kontak{
+            padding-bottom: 6rem;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            padding-top: 1rem;
+        }
+
+        h5.fw-bold.kontak{
+            font-size: 20px;
+            margin-left: 1rem;
+        }
+
+        p.card-text.feedback{
+            font-size: 14px;
+            margin-left: 1rem;
+            margin-right: 1rem;
+            margin-bottom: 5px;
+        }
+
+                /* -------------------------------------------------------------- */
+        /* ----------------------riwayat--------------------------------- */
+        /* -------------------------------------------------------------- */
+        div.riwayat {
+            margin-top: 3rem;
+        }
+
+        i.fa-regular {
+            color: green;
+        }
+
+        .btn.btn-primary.riwayat{
+            display: block;
+            padding-left: 0px;
+            padding: 10px;
+        }
+
+        .btn.btn-primary.mobile-riwayat{
+            display: none;
+            padding-left: 0px;
+        }
+
+        .container.table-riwayat{
+            margin-top: 4rem;
+            margin-bottom: 5rem;
+        }
+
+        .input-group {
+            justify-content: left;
+        }
+
+        .input-group .btn {
+            font-size: 16px;
+        }
+
+        hr {
+            size: 6px;
+        }
+
+        h2.riwayat-title{
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        h6.riwayat-sub-title{
+            font-size: 20px;
+        }
+
+        img.icon-table{
+            width: 10vh;
+        }
+
+        h6.font-riwayat{
+            font-size: 14px;
+            padding-left: 15px;
+        }
+
+        h6.font-sub-riwayat{
+            font-size: 12px;
+            padding-left: 15px;
+        }
+
+
+
+                        /*-------------- edit profile----------------------------
+        ------------------------------------------------------ */
+
+        .container.profile{
+            padding: 1rem;
+        }
+
+        .circular-image .img {
+            border-radius: 50%;
+        }
+
+        h4.profile{
+            font-weight: bold;
+        }
+
+        .rounded-circle.profile{
+            width: 150px;
+            height: 150px;
+        }
+
+        button.btn.btn-primary.btn-foto {
+            font-size: 14px;
+            border-radius: 50%;
+            margin-top: -70px;
+            z-index: auto;
+            margin-left: 110px;
+            border-style: solid;
+            border-width: 5px;
+            border-color: white;
+        }
+
+        .btn-up .btn {
+            font-size: 18px;
+            margin-bottom: 2rem;
+            margin-top: 1rem;
+            display: inline-block;
+        }
+
+        .edit-body.profile{
+            padding: 0rem 3rem;
+        }
+
+        /* ---------------------ubah password--------------------
+        --------------------------------------------------------- */
+
+        .card.change-pass{
+            width: 50%;
+            margin-left: 25%;
+            position: relative;
+        }
+
+        .btn-change .btn.btn-primary.change-pass{
+            margin-bottom: 0.375rem;
+            margin-top: 0.375rem;
+            font-size: 1rem;
+            float: right;
+        }
+
+        .btn-change .btn.btn-secondary.change-pass{
+            margin-bottom: 0.375rem;
+            margin-top: 0.375rem;
+            font-size: 1rem;
+            float: right;
+            margin-right: 10px;
+        }
+
+
+
+
+        .input-group {
+            justify-content: right;
+        }
+
+        p.info-txt {
+            font-size: 14px;
+            margin-bottom: 5px;
+            margin-top: 0px;
+        }
+
+        h5.info-txt {
+            font-size: 16px;
+
+        }
+
+        .subdetail {
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        p.subdetail-text {
+            font-weight: 500;
+            font-size: 12px;
+        }
+
+        .info-text {
+            font-size: 12px;
+            margin-bottom: 5px;
+        }
+
+        .date-text {
+            font-weight: bold;
+            font-size: 12px;
+            margin-bottom: 10px;
+        }
+
+        .harga-right {
+            text-align: right;
+        }
+
+        p.total {
+            font-size: 12px;
+            font-weight: bold;
+            color: red;
+        }
+
+        h4.detail {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        /*card booking */
+        div.row.booking{
+            padding: 1rem;
+        }
+
+        img.img-fluid{
+            width: 100%;
+            height: inherit;
+            object-fit: cover;
+        }
+
+        h3.card-title.wisata {
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        div.small-ratings.booking {
+            margin-top: 3px;
+            margin-bottom: 3px;
+            font-size: 10px;
+            padding-left: 1rem;
+            margin-left: -15px;
+        }
+
+        p.txt-location{
+            font-size: 10px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            max-width:150ch;
+            overflow: hidden;
+        }
+
+        .card-img-left {
+            width: 100%;
+            height: 50%;
+            object-fit: cover;
+            height: -webkit-fill-available;
+        }
+
+        p.txt-info-booking {
+            font-size: 12px;
+            margin-bottom: 5px;
+        }
+
+        p.txt-jam-booking {
+            font-size: 12px;
+        }
+
+        p.badge.bg-success.badge-list {
+            font-size: 12px;
+            padding: 6px;
+            margin-top: 0px;
+        }
+
+        p.badge.bg-danger.badge-list {
+            font-size: 12px;
+            padding: 6px;
+            margin-top: 0px;
+        }
+
+        h6.txt-tiket.booking {
+            font-size: 12px;
+            text-align: center;
+        }
+
+        p.txt-harga.booking {
+            font-size: 10px;
+            color: #d40000;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        button.btn.btn-primary.pesan-booking {
+            font-size: 12px;
+            margin-right: 5px;
+            width: 80px;
+            padding: 8px;
+            margin-top: 5px;
+        }
+
+
+    }
+
+    @media (min-width: 1200px) {
+        .welcoming-text {
+            position: relative;
+            z-index: 10;
+            /* width: 400px; */
+            top: 100px;
+        }
+
+        .form-booking {
+            position: relative;
+            z-index: 10;
+            /* width: 400px; */
+            top: 175px;
+        }
+
+        .welcoming-text {
+            position: relative;
+            z-index: 10;
+            /* width: 400px; */
+            top: 150px;
+        }
+
+        .title-section {
+            text-align: center;
+            font-weight: bold;
+            padding-top: 4rem;
+        }
+
+        h1.welcoming {
+            font-size: 42px;
+            font-weight: bold;
+        }
+
+        h1.sub-welcom {
+            font-size: 42px;
+        }
+
+        .form-booking {
+            position: relative;
+            z-index: 10;
+            /* width: 400px; */
+            top: 250px;
+        }
+
+        div.rekomen {
+            position: relative;
+            padding-top: 20px;
+            top: 0px;
+        }
+
+        div.header {
+            height: 500px;
+        }
+
+        .subdetail {
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        p.subdetail-text {
+            font-weight: 500;
+            font-size: 12px;
+        }
+
+        .info-text {
+            font-size: 12px;
+            margin-bottom: 5px;
+        }
+
+        .date-text {
+            font-weight: bold;
+            font-size: 12px;
+            margin-bottom: 10px;
+        }
+
+        .harga-right {
+            text-align: right;
+        }
+
+        p.total {
+            font-size: 12px;
+            font-weight: bold;
+            color: red;
+        }
+
+        h4.detail {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        div.review {
+            margin-top: 10px;
+        }
+
+    }
+
+    @media (min-width: 1400px) {
+        div.title-section {
+            margin-top: 30px;
+        }
+
+        h1.welcoming {
+            font-size: 48px;
+            font-weight: bold;
+        }
+
+        h1.sub-welcom {
+            font-size: 48px;
+        }
+
+        .harga-tiket {
+            font-size: 12px;
+            margin-left: 11px;
+        }
+
+        p.txt-info {
+            font-size: 14px;
+            margin-bottom: 5px;
+            margin-top: 0px;
+        }
+
+        p.txt-jam {
+            font-size: 14px;
+            text-align: center;
+        }
+
+        p.txt-harga {
+            font-size: 14px;
+            color: #d40000;
+            font-weight: bold;
+            text-align: left;
+            padding-left: 0px;
+        }
+
+        div.title-section {
+            padding-top: 4rem;
+        }
+
+        p.badge {
+            font-size: 14px;
+        }
+
+        button.btn.btn-primary.pesan {
+            font-size: 14px;
+            float: right;
+            margin-right: 5px;
+            width: 80px;
+            margin-top: 10px;
+            padding: 8px;
+        }
+
+        .card-body .card-title {
+            font-size: 20px;
+            margin-left: 1rem;
+            margin-top: 0.5rem;
+        }
+
+        p.card-text {
+            color: #767676;
+            font-size: 16px;
+            margin-left: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .title-section h2 {
+            text-align: center;
+            font-weight: bold;
+            padding-top: 2rem;
+            font-size: 24px;
+        }
+
+        .sub-title {
+            text-align: center;
+            font-size: 20px;
+        }
+
+
+    }
+
+    .vec-faq {
+        display: contents;
+        width: 450px;
+        height: 475px;
+        padding-left: 50px;
+    }
+
+
+    @media (max-width: 767px) {
+        .carousel-inner .carousel-item>div {
+            display: none;
+        }
+
+        .carousel-inner .carousel-item>div:first-child {
+            display: block;
+        }
+    }
+
+    .carousel-inner .carousel-item.active,
+    .carousel-inner .carousel-item-next,
+    .carousel-inner .carousel-item-prev {
+        display: flex;
+    }
+
+
+    p {
+        font-family: 'Poppins', sans-serif;
+        font-size: 1.1em;
+        font-weight: 300;
+        line-height: 1.7em;
+        color: #000000;
+    }
+
+
+
+
+    a,
+    a:hover,
+    a:focus {
+        color: inherit;
+        text-decoration: none;
+        transition: all 0.3s;
+    }
+
+    .navbar {
+        padding: 15px 10px;
+        background: #fff;
+        border: none;
+        border-radius: 0;
+        box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar-btn {
+        box-shadow: none;
+        outline: none !important;
+        border: none;
+    }
+
+    .line {
+        width: 100%;
+        height: 1px;
+        border-bottom: 1px dashed #ddd;
+        margin: 40px 0;
+    }
+
+    .title-section {
+        text-align: center;
+        padding-top: 1rem;
+    }
+
+
+
+    .bg-image-vertical {
+        position: relative;
+        overflow: hidden;
+        background-repeat: no-repeat;
+        background-position: right center;
+        background-size: auto 100%;
+    }
+
+    /* layar Tambahan */
+    @media (min-width: 1025px) {
+
+        .h-custom-2 {
+            height: 100%;
+        }
+
+    }
+}
+
+/* @media (min-width: 535px) {
+    h1.welcoming {
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+    h1.sub-welcom {
+        font-size: 28px;
+    }
+} */
+
+/* @media (min-width: 1150px){
+    div.title-section {
+        text-align: center;
+        font-weight: bold;
+        padding-top: 4rem;
+    }
+} */
