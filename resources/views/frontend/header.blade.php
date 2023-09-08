@@ -24,6 +24,58 @@
     <link rel="stylesheet" href="{{ 'assets/css/owl.carousel.css' }}">
 
     <title>OTW Jember - Online Tiket Wisata Kabupaten Jember</title>
+    <style>
+       .circular-image {
+            position: relative;
+            width: 300px;
+            margin-bottom: 20px;
+            /* height: 300px; */
+        }
+
+        .btn-round {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 25px;
+            background-color: #007BFF;
+            cursor: pointer;
+            position: absolute;
+            bottom: -20px;  /* posisi dari bawah foto */
+            right: 90px;  /* posisi dari kanan foto */
+        }
+
+        .btn-round input[type="file"] {
+            position: absolute;
+            opacity: 0;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+        }
+
+        .btn-round i.fa {
+            color: white;
+            font-size: 20px;
+        }
+   </style>
+   <script>
+        $(document).ready(function() {
+            $('#gambar_konten').change(function () {
+                const file = this.files[0];
+                if (file) {
+                    let reader = new FileReader();
+                    reader.onload = function (event) {
+                        $('#photosPreview')
+                        .attr("src",event.target.result);
+                    };
+                    reader.readAsDataURL(file);
+                }
+
+            })
+
+        })
+   </script>
 </head>
 
 <body>
