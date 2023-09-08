@@ -98,8 +98,8 @@
         </div>
     </div>
 </div>
-
 <div class="rekomen">
+
     <div class="container">
         <div class="title-section">
             <h2 class="txt-section">Rekomendasi Destinasi Wisata</h2>

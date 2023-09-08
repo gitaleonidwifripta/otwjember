@@ -14,6 +14,18 @@
             </div>
         </div>
         <div class="container">
+            @if (\Session::has('Log-error'))
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>{!! \Session::get('Log-error') !!}</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            @endif()
+            @if (\Session::has('Log-success'))
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>{!! \Session::get('Log-success') !!}</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            @endif()
             <div class="row g-0">
                 <div class="col-md-5 p-2">
                     <img src="{{ asset('/upload/' . $gambar_destinasi[0]->gambar_des) }}" class="card-img-left"
