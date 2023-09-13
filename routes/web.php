@@ -1,5 +1,10 @@
 <?php
 
+use App\Http\Controllers\FacebookController;
+use App\Http\Controllers\GoogleController;
+use App\Http\Controllers\NewsletterController;
+use App\Http\Controllers\RiwayatPesananController;
+use App\Models\newsletter;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -93,6 +98,16 @@ Route::POST('/pesan_wisata', [App\Http\Controllers\OrderController::class, 'stor
 Route::POST('/update_bayar/{id_transaksi}', [App\Http\Controllers\BayarController::class, 'update'])->name('update_bayar');
 Route::get('/invoice', [App\Http\Controllers\InvoiceController::class, 'show'])->name('show-invoice');
 // Route::get('/invoice', [App\Http\Controllers\InvoiceController::class, 'show'])->name('show-invoice');
+// riwayat pesanan
+Route::get('riwayat-pesanan',[RiwayatPesananController::class,'index'])->name('riwayat.pesanan');
+// google
+Route::get('auth/google',[GoogleController::class,'redirectToGoogle'])->name('google.login');
+Route::get('auth/google/callback',[GoogleController::class,'handleGoogleCallback'])->name('google.callback');
+// facebook
+Route::get('auth/facebook',[FacebookController::class,'index'])->name('facebook.index');
+Route::get('auth/facebook/callback',[FacebookController::class,'callback'])->name('facebook.callback');
+// newsletter
+Route::post('newsletter',[NewsletterController::class,'post'])->name('letter.post');
 //Route Backend
 Auth::routes();
 

@@ -531,11 +531,27 @@
     <div class="container">
         <h5 class="info-txt">Dapatkan Informasi Terbaru</h5>
         <p class="info-txt text-left">Terkait tempat wisata, diskon, info menarik lainnya</p>
+        @if (\Session::has('Log-error'))
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <strong>{!! \Session::get('Log-error') !!}</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        @endif()
+        @if (\Session::has('Log-success'))
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>{!! \Session::get('Log-success') !!}</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        @endif()
+        <form action="{{ route('letter.post') }}" method="POST">
+        @csrf
         <div class="input-group ">
             <input class="form-control" placeholder="Masukan Email Anda" type="text" name="subscribe"
                 id="subscribe">
 
             <button class="btn btn-primary" type="submit">Kirim</button>
+            </form>
+
         </div>
     </div>
 </div>

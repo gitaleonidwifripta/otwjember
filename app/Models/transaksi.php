@@ -11,6 +11,8 @@ class transaksi extends Model
 
     protected $table = 'transaksi';
     protected $primaryKey = 'id_transaksi';
+    public $incrementing = false;
+
 
     protected $fillable = [
         'tgl_transaksi',
@@ -27,5 +29,9 @@ class transaksi extends Model
     public function User()
     {
         return $this->belongsTo('App\\Models\\User', 'id');
+    }
+    public function detail_user()
+    {
+        return $this->belongsTo('App\\Models\\detail_user','id');
     }
 }

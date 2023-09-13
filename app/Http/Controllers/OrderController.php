@@ -20,6 +20,9 @@ class OrderController extends Controller
     }
     public function store(Request $request)
     {
+        $request->validate([
+            'hari' => 'required',
+        ]);
         $tglpesan = strtotime($request->post('hari'));
         $tglpesan = date("l", $tglpesan);
         $tglpesan = strtolower($tglpesan);
@@ -34,7 +37,6 @@ class OrderController extends Controller
         if (empty($tiket) ) {
             return redirect()->back()->with(['Log-error' => 'Data tidak ditemukan!']);
         }
-        return 'afa';
         $i = 0;
         $totalbayar = array();
         $idtiketdewasa = array();

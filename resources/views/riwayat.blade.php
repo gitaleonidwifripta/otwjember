@@ -50,29 +50,38 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <th scope="row"><input class="form-check-input" type="checkbox"></th>
-                    <td>12</td>
-                    <td>1 Oct, 21</td>
-                    <td><i class="fa-regular fa-circle-check"></i><span class="ms-1" style="color: green;">Paid</span>
-                    </td>
-                    <td>
-                        <div class="row">
-                            <div class="col-lg-4 d-none d-lg-block "><img src="{{ asset('assets/pict/logo-cust.png') }}"
-                                    class="icon-table">
+                @foreach ($transaksi as $item)
+                    <tr>
+                        <th scope="row"><input class="form-check-input" type="checkbox"></th>
+                        <td>{{ $item->id_transaksi }}</td>
+                        <td>{{ \Carbon\Carbon::parse($item->tgl_transaksi)->translatedFormat('d M Y') }}</td>
+                        <td><i class="fa-regular fa-circle-check"></i><span class="ms-1" style="color: green;">Paid</span>
+                        </td>
+                        <td>
+                            <div class="row">
+                                @if ($item->detail_user != null)
+                                    <div class="col-lg-4 d-none d-lg-block "><img src="{{$item->detail_user != null ?  asset('upload/fotoprofil/'.$item->detail_user->foto_profil) : asset('assets/pict/logo-cust.png') }}"
+                                            class="icon-table">
+                                    </div>
+                                @else
+                                    <div class="col-lg-4 d-none d-lg-block "><img src="{{ asset('assets/pict/logo-cust.png') }}"
+                                            class="icon-table">
+                                    </div>
+
+                                @endif
+                                <div class="col-12 col-lg-8" style="padding-left: 0px">
+                                    <h6 class="font-riwayat">{{ $item->user->name }}</h6>
+                                    <h6 class="font-sub-riwayat">{{ $item->user->email }}</h6>
+                                </div>
                             </div>
-                            <div class="col-12 col-lg-8" style="padding-left: 0px">
-                                <h6 class="font-riwayat">Ulfiatun Hasanah</h6>
-                                <h6 class="font-sub-riwayat">iniemailnyaulfi@gmail.com</h6>
+                        </td>
+                        <td style="text-align: end">
+                            <div class="dropdown">
+                                <i class="fa fa-ellipsis-v riwayat" aria-hidden="true"></i>
                             </div>
-                        </div>
-                    </td>
-                    <td style="text-align: end">
-                        <div class="dropdown">
-                            <i class="fa fa-ellipsis-v riwayat" aria-hidden="true"></i>
-                        </div>
-                    </td>
-                </tr>
+                        </td>
+                    </tr>
+                @endforeach
 
             </tbody>
         </table>
