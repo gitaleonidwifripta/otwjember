@@ -73,9 +73,24 @@
                 }
 
             })
+            $('#rating-filter .form-check-input').on('click', function() {
+                if ($(this).prop('checked')) {
+                    $('#rating-filter .form-check-input').not($(this)).prop('checked', false);
+                }
+            });
+            $('#sidebar-kategori .form-check-input').on('click', function() {
+                if ($(this).prop('checked')) {
+                    $('#sidebar-kategori .form-check-input').not($(this)).prop('checked', false);
+                }
+            });
+
+
 
         })
    </script>
+    <script>
+    </script>
+   @stack('js')
 </head>
 
 <body>

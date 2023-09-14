@@ -9,6 +9,7 @@ use App\Models\destinasi;
 use App\Models\kategori;
 use App\Models\User;
 use Auth;
+use Carbon\Carbon;
 
 class DestinasiController extends Controller
 {
@@ -45,6 +46,8 @@ class DestinasiController extends Controller
             'deskripsi' => $request->deskripsi,
             'id_kategori' => $request->id_kategori,
             'id' => $request->id,
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
         ]);
 
         return redirect()->route('admin.des')->with('success', 'Destinasi Wisata Berhasil Ditambahkan!');
@@ -70,6 +73,8 @@ class DestinasiController extends Controller
             'deskripsi' => $request->deskripsi,
             'id_kategori' => $request->id_kategori,
             'id' => $request->id,
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
         ]);
 
         return redirect()->route('admin.des')->with('update', 'Destinasi Wisata Berhasil Diupdate!');
