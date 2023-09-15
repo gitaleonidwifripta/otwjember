@@ -33,6 +33,7 @@ class DetailUserController extends Controller
         $detail_user = detail_user::where('id',$id)->first();
         if ($detail_user != null) {
             $update = detail_user::where('id',$id)->first();
+            $update->jenis_klm =  $request->jenis_klm;
             $update->alamat_user = $request->get('alamat_user');
             if ($request->hasFile('gambar_konten')) {
                 $photos = $request->file('gambar_konten');
@@ -49,6 +50,7 @@ class DetailUserController extends Controller
             $tambah = new detail_user;
             $tambah->alamat_user = $request->get('alamat_user');
             $tambah->id = $id;
+            $tambah->jenis_klm =  $request->jenis_klm;
             if ($request->hasFile('gambar_konten')) {
                 $photos = $request->file('gambar_konten');
                 $filename = date('His') . '.' . $photos->getClientOriginalExtension();
