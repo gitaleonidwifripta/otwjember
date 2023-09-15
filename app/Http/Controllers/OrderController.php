@@ -20,6 +20,9 @@ class OrderController extends Controller
     }
     public function store(Request $request)
     {
+        $request->validate([
+            'hari' => 'required',
+        ]);
         $tglpesan = strtotime($request->post('hari'));
         $tglpesan = date("l", $tglpesan);
         $tglpesan = strtolower($tglpesan);
@@ -30,7 +33,10 @@ class OrderController extends Controller
         }
         // echo $tiketanak;
         $tiket = tiket::with('destinasi')->where('id_destinasi', '=', $_REQUEST['id_destinasi'])
-            ->where('jenis_hari', '=', $tglpesan)->get()->toArray();
+        ->where('jenis_hari', '=', $tglpesan)->get()->toArray();
+        if (empty($tiket) ) {
+            return redirect()->back()->with(['Log-error' => 'Data tidak ditemukan!']);
+        }
         $i = 0;
         $totalbayar = array();
         $idtiketdewasa = array();

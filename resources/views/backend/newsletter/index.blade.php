@@ -73,21 +73,12 @@
                             <tr>
                                 <th>No</th>
                                 <th>email</th>
-                                <th>Aksi</th>
                             </tr>
                         </thead>
                         @foreach ($news as $items)
                         <tr>
                             <th>{{$items->id_news}}</th>
                             <th>{{$items->email}}</th>
-                            <td class="table-actions">
-                                <a href="#" class="table-action" data-toggle="tooltip" data-original-title="Edit product">
-                                    <button type="button" class="btn btn-success"><i class="fas fa-user-edit"></i></button>
-                                </a>
-                                <a href="#" class="table-action table-action-delete" data-toggle="tooltip" data-original-title="Delete product" onclick="return confirm('Apakah Anda yakin ingin menghapus data?')">
-                                    <button type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button>
-                                </a>
-                            </td>
                         </tr>
                         @endforeach
                     </table>

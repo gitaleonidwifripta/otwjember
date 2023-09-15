@@ -1,6 +1,8 @@
 @include ('frontend.header')
 @include ('frontend.navbar')
+@push('js')
 
+@endpush
 <!-- Modal mobile -->
 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
     aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -11,18 +13,20 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
+                <form action="{{ route('booking') }}" method="GET">
+
                 <div class="sidebar-tgl pt-4">
                     <div class="form-floating mb-3 mt-3 d-none">
-                        <input type="date" class="form-control" id="tgl" placeholder="Enter tanggal"
+                        <input type="date" class="form-control" id="tgl" placeholder="Enter tanggal" value="{{ request('tgl') }}"
                             name="tgl">
                         <label for="Tanggal">Tanggal</label>
                     </div>
                     <a class="btn btn-primary btn p-2 d-grid gap-2 d-none" href="#" role="button">Cari</a>
                 </div>
-                <div class="sidebar-filter">
+                <div class="sidebar-filter "id="rating-filter">
                     <h6 class="txt-booking"> Rating </h6>
-                    <div class="form-check rating">
-                        <input class="form-check-input" type="checkbox" value="" id="rate5">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="5" id="rate5" name="rate" {{ request('rate') == '5' ? 'checked' : '' }}>
                         <label class="form-check-label" for="rate5">
                             <div class="small-ratings">
                                 <i class="fa fa-star rating-color"></i>
@@ -35,7 +39,7 @@
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="rate4">
+                        <input class="form-check-input" type="checkbox" value="4" id="rate4" name="rate" {{ request('rate') == '4' ? 'checked' : '' }}>
                         <label class="form-check-label" for="rate4">
                             <div class="small-ratings">
                                 <i class="fa fa-star rating-color"></i>
@@ -48,7 +52,7 @@
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="rate3">
+                        <input class="form-check-input" type="checkbox" value="3" id="rate3" name="rate" {{ request('rate') == '3' ? 'checked' : '' }}>
                         <label class="form-check-label" for="rate3">
                             <div class="small-ratings">
                                 <i class="fa fa-star rating-color"></i>
@@ -61,7 +65,7 @@
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="rate2">
+                        <input class="form-check-input" type="checkbox" value="2" id="rate2" name="rate" {{ request('rate') == '2' ? 'checked' : '' }}>
                         <label class="form-check-label" for="rate2">
                             <div class="small-ratings">
                                 <i class="fa fa-star rating-color"></i>
@@ -73,8 +77,8 @@
                             </div>
                         </label>
                     </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="rate1">
+                    <div class="form-check ">
+                        <input class="form-check-input" type="checkbox" value="1" id="rate1" name="rate" {{ request('rate') == '1' ? 'checked' : '' }}>
                         <label class="form-check-label" for="rate1">
                             <div class="small-ratings">
                                 <i class="fa fa-star rating-color"></i>
@@ -87,17 +91,13 @@
                         </label>
                     </div>
                 </div>
-                <div class="sidebar-harga">
-                    <label for="customRange3" class="col-form-label-sm"> Harga</label>
-                    <input type="range" class="form-range" min="0" max="5" step="0.5"
-                        id="customRange3">
-                </div>
+
                 <div class="sidebar-kategori">
                     <h7>Kategori</h7>
                     @foreach ($kategori as $items)
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="{{ $items->id_kategori }}"
-                                id="kat1">
+                            <input class="form-check-input" type="checkbox" value="{{ $items->id_kategori }}" {{ request('kategori') == $items->id_kategori ? 'checked' : '' }}
+                                id="kat1" name="kategori">
                             <label class="form-check-label" for="kat1">
                                 {{ $items->kategori }}
                             </label>
@@ -106,6 +106,7 @@
                 </div>
             </div>
             <div class="modal-footer">
+
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
             </div>
         </div>
@@ -124,21 +125,32 @@
                     <p></p>
                     <h6 class="txt-booking" style="font-size:16px"> Tanggal Booking </h6>
                     <div class="form-floating mb-3 mt-3">
-                        <input type="date" class="form-control" id="tgl" placeholder="Enter tanggal"
+                        <input type="date" class="form-control" id="tgl" placeholder="Enter tanggal" value="{{ request('tgl') }}"
                             name="tgl">
                         <label for="Tanggal">Tanggal</label>
                     </div>
-                    <a class="btn btn-primary btn p-2 d-grid gap-2" href="#" role="button">Cari</a>
+                    @if ($cari != null || request('rate') != null)
+                        <div class="d-flex w-100">
+                            <div class="w-100">
+                                <button class="btn btn-primary w-100" type="submit">Cari</button>
+                            </div>
+                            <div class="w-100 mx-2">
+                                <a href="{{ route('booking') }}" class="btn btn-secondary w-100">Reset</a>
+                            </div>
+                        </div>
+                    @else
+                        <button class="btn btn-primary w-100" type="submit">Cari</button>
+                    @endif
                 </div>
                 </p>
 
                 <p>
-                <div class="sidebar-filter mt-5">
+                <div class="sidebar-filter mt-5" id="rating-filter">
                     <h3 class="txt-booking mt-2" style="font-size:24px"> Filter by </h3>
                     <hr />
                     <h6 class="txt-booking" style="font-size:16px"> Rating </h6>
                     <div class="form-check rating">
-                        <input class="form-check-input" type="checkbox" value="" id="rate5">
+                        <input class="form-check-input" type="checkbox" value="5" id="rate5" name="rate" {{ request('rate') == '5' ? 'checked' : '' }}>
                         <label class="form-check-label" for="rate5">
                             <div class="small-ratings">
                                 <i class="fa fa-star rating-color"></i>
@@ -151,7 +163,7 @@
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="rate4">
+                        <input class="form-check-input" type="checkbox" value="4" id="rate4" name="rate" {{ request('rate') == '4' ? 'checked' : '' }}>
                         <label class="form-check-label" for="rate4">
                             <div class="small-ratings">
                                 <i class="fa fa-star rating-color"></i>
@@ -164,7 +176,7 @@
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="rate3">
+                        <input class="form-check-input" type="checkbox" value="3" id="rate3" name="rate" {{ request('rate') == '3' ? 'checked' : '' }}>
                         <label class="form-check-label" for="rate3">
                             <div class="small-ratings">
                                 <i class="fa fa-star rating-color"></i>
@@ -177,7 +189,7 @@
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="rate2">
+                        <input class="form-check-input" type="checkbox" value="2" id="rate2" name="rate" {{ request('rate') == '2' ? 'checked' : '' }}>
                         <label class="form-check-label" for="rate2">
                             <div class="small-ratings">
                                 <i class="fa fa-star rating-color"></i>
@@ -190,7 +202,7 @@
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="rate1">
+                        <input class="form-check-input" type="checkbox" value="1" id="rate1" name="rate" {{ request('rate') == '1' ? 'checked' : '' }}>
                         <label class="form-check-label" for="rate1">
                             <div class="small-ratings">
                                 <i class="fa fa-star rating-color"></i>
@@ -203,20 +215,13 @@
                         </label>
                     </div>
                 </div>
-
-                <div class="sidebar-harga">
-                    <label for="customRange3" class="txt-booking col-form-label-sm" style="font-size:16px">
-                        Harga</label>
-                    <input type="range" class="form-range" min="0" max="5" step="0.5"
-                        id="customRange3">
-                </div>
-                <div class="sidebar-kategori">
+                <div class="sidebar-kategori" id="sidebar-kategori">
                     <h7 class="txt-booking" style="font-size:16px">Kategori</h7>
                     <p> </p>
                     @foreach ($kategori as $items)
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" value="{{ $items->id_kategori }}"
-                                id="kat1">
+                                id="kat1" name="kategori" {{ request('kategori') == $items->id_kategori ? 'checked' : '' }}>
                             <label class="form-check-label" for="kat1">
                                 {{ $items->kategori }}
                             </label>
@@ -239,10 +244,21 @@
                         </div>
                         <div class="col-10 email-sub d-flex align-items-center d-block d-md-none">
                             <div class="input-group">
-                                <input class="form-control" id="tgl" placeholder="Masukan Tanggal"
-                                    type="date" name="tgl" id="subscribe">
-
-                                <button class="btn btn-primary" type="submit">Cari</button>
+                                <input class="form-control" id="tgl" placeholder="Masukan Tanggal" value="{{ request('tgl_mobile') }}"
+                                    type="date" name="tgl_mobile" id="subscribe">
+                                @if ($cari != null || request('rate') != null)
+                                    <div class="d-flex">
+                                        <div class="w-100">
+                                            <button class="btn btn-primary w-100" type="submit">Cari</button>
+                                        </div>
+                                        <div class="w-100">
+                                            <a href="{{ route('booking') }}" class="btn btn-secondary w-100">Reset</a>
+                                        </div>
+                                    </div>
+                                @else
+                                    <button class="btn btn-primary" type="submit">Cari</button>
+                                @endif
+                            </form>
                             </div>
                         </div>
                     </div>

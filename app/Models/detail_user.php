@@ -11,7 +11,7 @@ class detail_user extends Model
 
     protected $table = 'detail_user';
     protected $primaryKey = 'id_detailuser';
-
+    public $incrementing = false;
     protected $fillable = [
         'foto_profil',
         'alamat_user',

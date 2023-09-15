@@ -7,21 +7,39 @@ use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use App\Models\gambar_destinasi;
 use App\Models\destinasi;
+use App\Models\Rating;
 
 class BookingController extends Controller
 {
-    public function booking()
+    public function booking(Request $request)
     {
-        $destinasi = DB::table('destinasi')
-            ->get();
+        // return $request;
+        $cari = $request->has('tgl') ? 'ada' : null;
+        $query = destinasi::when($request->get('tgl'),function ($query) use ($request)
+            {
+                $query->whereDate('created_at',$request->get('tgl'));
+            })->when($request->get('tgl_mobile'),function ($query) use ($request)
+            {
+                $query->whereDate('created_at',$request->get('tgl_mobile'));
+            });
 
+        if ($request->has('rate') || $request->has('kategori')) {
+            $rating = Rating::where('rating', $request->get('rate'))->pluck('id_destinasi');
+            $destinasi = $query->whereIn('id_destinasi',$rating)->when($request->get('kategori'),function ($query) use ($request)
+            {
+                $query->where('id_kategori',$request->get('kategori'));
+            })->get();
+        }else{
+            $destinasi = $query->get();
+
+        }
         $destinasi->map(function ($item) {
             $item->gambar_des = DB::table('gambar_destinasi')->where('id_destinasi', $item->id_destinasi)->first()?->gambar_des;
             return $item;
         });
 
         $kategori = DB::table('kategori')->get();
-        return view('booking', compact('destinasi', 'kategori'));
+        return view('booking', compact('destinasi', 'kategori','cari'));
     }
 
     public function add_process(Request $destinasi)

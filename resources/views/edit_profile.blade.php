@@ -5,18 +5,17 @@
         <div class="card-title pt-5">
             <h4 class="profile">Edit Profile</h4>
         </div>
-        <div class="circular-image">
-            <img src="{{ asset('assets/pict/fp.jpg') }}" class="rounded-circle profile" width="300px" height="300px"
-                alt="...">
-        </div>
-        <div class="">
-            <button class="btn btn-primary btn-foto" onclick="changeImage()" type="button">
+        <div class="circular-image d-flex mx-auto">
+            <img src="{{$user->detail_user != null ?  asset('upload/fotoprofil/'.$user->detail_user->foto_profil) : asset('assets/pict/fp.jpg') }}" id="photosPreview" class="rounded-circle profile mx-auto" width="300px" height="300px" alt="...">
+            <form method="POST" action="{{ route('profile.update') }}" enctype="multipart/form-data">
+            @csrf
+            <div class="btn-round">
+                <input type="file" id="gambar_konten" name="gambar_konten" value="{{ old('gambar_konten') }}" />
                 <i class="fa fa-pencil" aria-hidden="true"></i>
-            </button>
+            </div>
         </div>
         <div class="edit-body profile">
-            <form method="POST" action="{{ route('profile.update') }}">
-                @csrf
+
                 <div class="form-floating mb-3 mt-3">
                     <input type="text" class="form-control" id="nama" placeholder="Enter nama" name="name"
                         value="{{ $user->name }}">
@@ -42,9 +41,17 @@
                     <label for="nama">Jenis Kelamin</label>
                 </div>
                 <div class="form-floating mb-3 mt-3">
-                    <input type="text" class="form-control" id="alamat_user" placeholder="Enter alamat"
-                        name="alamat_user" value="{{ $user->alamat_user }}">
+                    <input type="text" class="form-control @error('alamat_user')
+                    is-invalid
+                    @enderror"" id="alamat_user" placeholder="Enter alamat"
+                        name="alamat_user" value="{{ $user->detail_user != null ? $user->detail_user->alamat_user : ''}}">
                     <label for="nama">Alamat</label>
+                    @error('alamat_user')
+                        <div class="invalid-feedback">
+                            <i class="bi bi-radio-circle"></i>
+                            {{$message}}.
+                        </div>
+                    @enderror
                 </div>
                 {{-- <div class="form-floating mt-3 mb-3">
                     <input type="password" class="form-control" id="pwd" placeholder="Enter password"

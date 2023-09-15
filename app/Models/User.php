@@ -46,7 +46,7 @@ class User extends Authenticatable
 
     public function detail_user()
     {
-        return $this->hasMany('App\\Models\\detail_user', 'detail_user', 'id_detailuser');
+        return $this->hasOne(detail_user::class,'id');
     }
 
     public function transaksi()

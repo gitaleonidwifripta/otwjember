@@ -34,6 +34,10 @@
                                 <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                 Profile
                             </a>
+                            <a class="dropdown-item" href="{{ route('riwayat.pesanan') }}">
+                                <i class="fas fa-weight-hanging fa-sm fa-fw mr-2 text-gray-400"></i>
+                                Riwayat Pesanan
+                            </a>
                             </a><a class="dropdown-item" href="{{ route('admin.password') }}">
                                 <i class="fas fa-key fa-sm fa-fw mr-2 text-gray-400"></i>
                                 Ubah Password
@@ -55,6 +59,11 @@
                             <a class="dropdown-item" href="{{ route('profile.edit') }}">
                                 <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                 Profile
+                            </a>
+                            <a class="dropdown-item" href="{{ route('riwayat.pesanan') }}">
+                                {{-- <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i> --}}
+                                <i class="fas fa-weight-hanging fa-sm fa-fw mr-2 text-gray-400"></i>
+                                Riwayat Pesanan
                             </a>
                             </a><a class="dropdown-item" href="{{ route('user.password') }}">
                                 <i class="fas fa-key fa-sm fa-fw mr-2 text-gray-400"></i>
