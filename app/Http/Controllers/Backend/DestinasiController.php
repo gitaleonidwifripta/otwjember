@@ -4,9 +4,11 @@ namespace App\Http\Controllers\Backend;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Jobs\SendNewsUpdateEmail;
 use Illuminate\Support\Facades\DB;
 use App\Models\destinasi;
 use App\Models\kategori;
+use App\Models\newsletter;
 use App\Models\User;
 use Auth;
 use Carbon\Carbon;
@@ -16,6 +18,7 @@ class DestinasiController extends Controller
     public function index()
     {
         $destinasi = destinasi::with('kategori', 'User')->get();
+
         return view('backend/destinasi.index', compact('destinasi'));
     }
 
@@ -49,7 +52,10 @@ class DestinasiController extends Controller
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ]);
-
+        $newsletter = newsletter::get();
+        foreach ($newsletter as $item) {
+            SendNewsUpdateEmail::dispatch($item->email);
+        }
         return redirect()->route('admin.des')->with('success', 'Destinasi Wisata Berhasil Ditambahkan!');
     }
 

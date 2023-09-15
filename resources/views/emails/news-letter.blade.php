@@ -14,14 +14,7 @@
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
         @foreach ($destinasi as $items)
         <div class="card p-3 shadow-lg">
-            <div class="mb-3">
-                @if ($items->gambar_des)
-                <img src="{{ $message->embed(asset('/upload/' . $items->gambar_des)) }}" alt="Image" class="w-full h-56 object-cover">
-                @else
-                <img src="assets/pict/sample-1.png" alt="Image" class="w-full h-56 object-cover">
-                @endif
-            </div>
-            <h5 class="text-xl mb-2">{{ $items->nama_des }}</h5>
+            <h5 class="text-xl mb-2 fw-bold">{{ $items->nama_des }}</h5>
             <div class="flex space-x-1 mb-3">
                 <i class="fas fa-star text-yellow-400"></i>
                 <i class="fas fa-star text-yellow-400"></i>
