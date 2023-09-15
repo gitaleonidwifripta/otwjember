@@ -33,10 +33,15 @@
                 </div>
                 <div class="form-floating mb-3 mt-3">
                     <select type="text" class="form-control" id="jenis_klm" placeholder="Enter jenis_klm"
-                        name="jenis_klm" value="{{ $user->jenis_klm }}">
+                        name="jenis_klm" >
                         <option disabled selected>Pilih Jenis Kelamin</option>
-                        <option value="lk">Laki-laki</option>
-                        <option value="pr">Perempuan</option>
+                        @if ($user->detail_user != null)
+                            <option value="lk" {{ $user->detail_user->jenis_klm == 'lk' ? 'selected' : '' }}>Laki-laki</option>
+                            <option value="pr" {{ $user->detail_user->jenis_klm == 'pr' ? 'selected' : '' }}>Perempuan</option>
+                        @else
+                            <option value="lk" >Laki-laki</option>
+                            <option value="pr" >Perempuan</option>
+                        @endif
                     </select>
                     <label for="nama">Jenis Kelamin</label>
                 </div>
