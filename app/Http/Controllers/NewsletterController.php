@@ -22,7 +22,6 @@ class NewsletterController extends Controller
         $newsletter = new newsletter;
         $newsletter->email = $request->subscribe;
         $newsletter->save();
-        // SendNewsUpdateEmail::dispatch($newsletter->email)->delay(now()->addDay())->appendOutputTo(storage_path('logs/inspire.log'));
         return redirect()->route('app')->with(['Log-success' => 'Dapatkan notifikasi destinasi terbaru di email anda !']);
     }
 }

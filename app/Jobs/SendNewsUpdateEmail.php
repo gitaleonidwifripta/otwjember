@@ -3,6 +3,7 @@
 namespace App\Jobs;
 
 use App\Mail\NewsUpdateMail;
+use Carbon\Carbon;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldBeUnique;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -36,13 +37,15 @@ class SendNewsUpdateEmail implements ShouldQueue
     {
         $destinasi = DB::table('destinasi')
             ->orderByDesc('id_destinasi')
-            ->take(3)
+            ->whereDate('created_at',Carbon::now())
+            ->take(1)
             ->get();
-
-        $destinasi->map(function ($item) {
-            $item->gambar_des = DB::table('gambar_destinasi')->where('id_destinasi', $item->id_destinasi)->first()?->gambar_des;
-            return $item;
-        });
-        Mail::to($this->email)->send(new NewsUpdateMail($destinasi));
+        if ($destinasi != null) {
+            $destinasi->map(function ($item) {
+                $item->gambar_des = DB::table('gambar_destinasi')->where('id_destinasi', $item->id_destinasi)->first()?->gambar_des;
+                return $item;
+            });
+            Mail::to($this->email)->send(new NewsUpdateMail($destinasi));
+        }
     }
 }
