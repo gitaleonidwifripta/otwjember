@@ -11,6 +11,13 @@
     </div>
     <div class="form-booking">
         <div class="container">
+            @if (\Session::has('error'))
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>{!! \Session::get('error') !!}</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            @endif()
+
             <div class="row d-flex justify-content-center">
                 <div class="col-md-10">
                     <form action="{{ route('cari_wisata') }}" method="GET" enctype="multipart/form-data">

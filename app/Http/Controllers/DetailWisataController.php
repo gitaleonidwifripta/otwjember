@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use App\Models\gambar_destinasi;
 use App\Models\destinasi;
 use App\Models\tiket;
+use Carbon\Carbon;
 
 class DetailWisataController extends Controller
 {
@@ -40,6 +41,22 @@ class DetailWisataController extends Controller
 
     public function store(Request $request)
     {
+        // cek inputan tanggal inputan
+        $tanggal_input = date('d-m-Y', strtotime($request->hari));
+        // cek inputan waktu inputan
+        $tanggal_waktu = date('H:i:s', strtotime($request->jam));
+        // cek inputan tanggal sekarang
+        $cek_tanggal = Carbon::now()->format('d-m-Y');
+        // cek inputan waktu sekarang
+        $cek_waktu = Carbon::now()->format('H:i:s');
+        // validasi tanggal
+        if ($tanggal_input < $cek_tanggal) {
+            return redirect()->route('app')->with(['error' => 'Tanggal tidak sesuai dengan tanggal sekarang!']);
+
+        }
+        if ($tanggal_waktu < $cek_waktu) {
+            return redirect()->route('app')->with(['error' => 'Waktu tidak sesuai dengan waktu sekarang!']);
+        }
         $jam = $request->jam;
         $hari = $request->hari;
 
