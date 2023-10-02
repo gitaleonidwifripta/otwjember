@@ -30,6 +30,8 @@ class NewsUpdateMail extends Mailable
      */
     public function build()
     {
-        return $this->view('emails.news-letter')->with(['message' => $this])->subject("Notifikasi Destinasi Wisata");
+        return $this->view('emails.news-letter')
+        ->with(['destinasi' => $this->destinasi])  // corrected here
+        ->subject("Notifikasi Destinasi Wisata");
     }
 }
