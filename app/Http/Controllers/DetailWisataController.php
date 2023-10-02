@@ -42,7 +42,6 @@ class DetailWisataController extends Controller
     public function store(Request $request)
     {
         // cek inputan tanggal inputan
-
         if ($request->has('hari') || $request->has('jam')) {
             $tanggal_input = date('d-m-Y', strtotime($request->hari));
             // cek inputan waktu inputan
@@ -52,12 +51,14 @@ class DetailWisataController extends Controller
             // cek inputan waktu sekarang
             $cek_waktu = Carbon::now()->format('H:i:s');
             // validasi tanggal
-            if ($tanggal_input < $cek_tanggal) {
+            if ($tanggal_input <= $cek_tanggal) {
+                if ($tanggal_input == $cek_tanggal) {
+                    if ($tanggal_waktu < $cek_waktu) {
+                        return redirect()->route('app')->with(['error' => 'Waktu tidak sesuai dengan waktu sekarang!']);
+                    }
+                }
                 return redirect()->route('app')->with(['error' => 'Tanggal tidak sesuai dengan tanggal sekarang!']);
 
-            }
-            if ($tanggal_waktu < $cek_waktu) {
-                return redirect()->route('app')->with(['error' => 'Waktu tidak sesuai dengan waktu sekarang!']);
             }
         }
 
