@@ -108,6 +108,8 @@ Route::get('auth/facebook',[FacebookController::class,'index'])->name('facebook.
 Route::get('auth/facebook/callback',[FacebookController::class,'callback'])->name('facebook.callback');
 // newsletter
 Route::post('newsletter',[NewsletterController::class,'post'])->name('letter.post');
+// Isi Rating
+// Route::get('')
 //Route Backend
 Auth::routes();
 
@@ -213,5 +215,5 @@ Route::prefix('mitra')->middleware('mitra')->group(function () {
 });
 
 Route::prefix('user')->middleware('user')->group(function () {
-    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'indfex'])->name('home');
 });
