@@ -42,6 +42,7 @@ class DetailWisataController extends Controller
     public function store(Request $request)
     {
         // cek inputan tanggal inputan
+
         if ($request->has('hari') || $request->has('jam')) {
             $tanggal_input = date('d-m-Y', strtotime($request->hari));
             // cek inputan waktu inputan
@@ -59,6 +60,7 @@ class DetailWisataController extends Controller
                 return redirect()->route('app')->with(['error' => 'Waktu tidak sesuai dengan waktu sekarang!']);
             }
         }
+
         $jam = $request->jam;
         $hari = $request->hari;
 
