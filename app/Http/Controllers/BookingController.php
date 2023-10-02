@@ -25,10 +25,14 @@ class BookingController extends Controller
 
         if ($request->has('rate') || $request->has('kategori')) {
             $rating = Rating::where('rating', $request->get('rate'))->pluck('id_destinasi');
-            $destinasi = $query->whereIn('id_destinasi',$rating)->when($request->get('kategori'),function ($query) use ($request)
-            {
-                $query->where('id_kategori',$request->get('kategori'));
-            })->get();
+            if (count($rating) > 0) {
+                $destinasi = $query->whereIn('id_destinasi',$rating)->when($request->get('kategori'),function ($query) use ($request)
+                {
+                    $query->where('id_kategori',$request->get('kategori'));
+                })->get();
+            }else{
+                $destinasi = $query->where('id_kategori',$request->get('kategori'))->get();
+            }
         }else{
             $destinasi = $query->get();
 
