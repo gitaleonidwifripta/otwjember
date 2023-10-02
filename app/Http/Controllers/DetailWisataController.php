@@ -42,27 +42,32 @@ class DetailWisataController extends Controller
     public function store(Request $request)
     {
         // cek inputan tanggal inputan
-        $tanggal_input = date('d-m-Y', strtotime($request->hari));
-        // cek inputan waktu inputan
-        $tanggal_waktu = date('H:i:s', strtotime($request->jam));
-        // cek inputan tanggal sekarang
-        $cek_tanggal = Carbon::now()->format('d-m-Y');
-        // cek inputan waktu sekarang
-        $cek_waktu = Carbon::now()->format('H:i:s');
-        // validasi tanggal
-        // echo $tanggal_input;
-        // echo $tanggal_waktu;
-        if ($tanggal_input < $cek_tanggal && $tanggal_waktu < $cek_waktu || $tanggal_input < $cek_tanggal && $tanggal_waktu > $cek_waktu ) {
-            return redirect()->route('app')->with(['error' => 'Tanggal tidak sesuai dengan tanggal sekarang!']);
 
+        if ($request->has('hari') || $request->has('jam')) {
+            $tanggal_input = date('d-m-Y', strtotime($request->hari));
+            // cek inputan waktu inputan
+            $tanggal_waktu = date('H:i:s', strtotime($request->jam));
+            // cek inputan tanggal sekarang
+            $cek_tanggal = Carbon::now()->format('d-m-Y');
+            // cek inputan waktu sekarang
+            $cek_waktu = Carbon::now()->format('H:i:s');
+            // validasi tanggal
+            if ($tanggal_input < $cek_tanggal) {
+                return redirect()->route('app')->with(['error' => 'Tanggal tidak sesuai dengan tanggal sekarang!']);
+
+            }
+            if ($tanggal_waktu < $cek_waktu) {
+                return redirect()->route('app')->with(['error' => 'Waktu tidak sesuai dengan waktu sekarang!']);
+            }
         }
-        // if ($tanggal_waktu < $cek_waktu) {
-        //     return redirect()->route('app')->with(['error' => 'Waktu tidak sesuai dengan waktu sekarang!']);
-        // }
+
         $jam = $request->jam;
         $hari = $request->hari;
 
         $gambar_destinasi = DB::table('gambar_destinasi')->where('id_destinasi', '=', $_REQUEST['destinasi'])->get();
+        if (count($gambar_destinasi) == 0) {
+            return redirect()->route('app')->with(['error' => 'Data tidak valid!']);
+        }
         $destinasi = DB::table('destinasi')->where('id_destinasi', '=', $_REQUEST['destinasi'])->get();
         $data = compact('gambar_destinasi', 'destinasi', 'jam', 'hari');
 
