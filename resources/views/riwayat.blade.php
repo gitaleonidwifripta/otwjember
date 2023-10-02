@@ -55,7 +55,15 @@
                         <th scope="row"><input class="form-check-input" type="checkbox"></th>
                         <td>{{ $item->id_transaksi }}</td>
                         <td>{{ \Carbon\Carbon::parse($item->tgl_transaksi)->translatedFormat('d M Y') }}</td>
-                        <td><i class="fa-regular fa-circle-check"></i><span class="ms-1" style="color: green;">Paid</span>
+                        <td>
+                            @if ($item->status == 'sukses')
+                                <i class="fa-regular fa-circle-check"></i><span class="ms-1" style="color: green;">Paid</span> <br>
+                                <hr>
+                                <a href="" class="" style="font-size: 12px">Isi Rating <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+                            @else
+                                <i class="fa fa-times" aria-hidden="true"></i><span class="ms-1" style="color: red;">{{ $item->status }}
+                            @endif
+                        </span>
                         </td>
                         <td>
                             <div class="row">

@@ -40,7 +40,8 @@ class SendNewsUpdateEmail implements ShouldQueue
             ->whereDate('created_at',Carbon::now())
             ->take(1)
             ->get();
-        if ($destinasi != null) {
+        // Check if the collection is not empty
+        if (!$destinasi->isEmpty()) {
             $destinasi->map(function ($item) {
                 $item->gambar_des = DB::table('gambar_destinasi')->where('id_destinasi', $item->id_destinasi)->first()?->gambar_des;
                 return $item;

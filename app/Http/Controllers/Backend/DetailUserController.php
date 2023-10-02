@@ -13,6 +13,13 @@ class DetailUserController extends Controller
 {
     public function edit()
     {
+        $detail = detail_user::count();
+        if ($detail == 0) {
+            $tambah = new detail_user;
+            $tambah->alamat_user = 'isi alamat anda';
+            $tambah->id = Auth::user()->id;
+            $tambah->save();
+        }
         $user = User::with('detail_user')->where('id',Auth::user()->id)->first();
         $detail_user = detail_user::with('user')->get();
         return view('edit_profile', [

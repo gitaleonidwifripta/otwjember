@@ -1,57 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.1.2/dist/tailwind.min.css" rel="stylesheet">
 </head>
+<body style="background-color: #f7f7f7; padding: 20px; font-family: Arial, sans-serif;">
 
-<body class="bg-gray-100 p-5">
-    <h4 class="font-bold text-center">Destinasi Wisata</h4>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-        @foreach ($destinasi as $items)
-        <div class="card p-3 shadow-lg">
-            <h5 class="text-xl mb-2 fw-bold">{{ $items->nama_des }}</h5>
-            <div class="flex space-x-1 mb-3">
-                <i class="fas fa-star text-yellow-400"></i>
-                <i class="fas fa-star text-yellow-400"></i>
-                <i class="fas fa-star text-yellow-400"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <span class="text-gray-600">(3)</span>
-            </div>
-            <p class="mb-3 flex items-center text-gray-600"><i class="fas fa-location-arrow"></i> {{ $items->alamat }}</p>
-            <hr class="mb-3">
-            <div class="grid grid-cols-3 text-center border-t border-b py-2 mb-3">
-                <div>
-                    <p class="text-sm text-gray-600">Jam Buka</p>
-                    <p>08.00</p>
-                </div>
-                <div>
-                    <p class="text-sm text-gray-600">Jam Tutup</p>
-                    <p>17.00</p>
-                </div>
-                <div>
-                    <p class="text-sm text-gray-600">Status</p>
-                    <p class="text-xs px-2 py-1 rounded {{ $items->status_des == 'Buka' ? 'bg-green-500' : 'bg-red-500' }} text-white">
-                        {{ $items->status_des == 'Buka' ? 'buka' : 'Tutup' }}
-                    </p>
-                </div>
-            </div>
-            <div class="flex justify-between items-center">
-                <div>
-                    <p class="text-sm text-gray-600">Harga Tiket</p>
-                    <p class="text-gray-700">Rp7.000 s/d Rp15.000</p>
-                </div>
-                <a href="{{ route('cari_wisata', ['destinasi' => $items->id_destinasi]) }}" class="bg-blue-500 text-white text-sm px-4 py-2 rounded">Pesan</a>
-            </div>
-        </div>
-        @endforeach
-    </div>
+<h4 style="font-weight: bold; text-align: center;">Destinasi Wisata</h4>
+
+<table width="100%" cellspacing="10">
+    @foreach ($destinasi as $items)
+    <tr>
+        <td style="background-color: #ffffff; padding: 15px; border-radius: 5px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+            <h5 style="font-size: 20px; margin-bottom: 10px; font-weight: bold;">{{ $items->nama_des }}</h5>
+            <!-- You can replace these icons with images if you want them to display correctly -->
+            <p style="margin-bottom: 10px; color: #888888;">Location: {{ $items->alamat }}</p>
+            <hr style="border: 0; border-top: 1px solid #eaeaea; margin-bottom: 10px;">
+            <table width="100%" cellspacing="5">
+                <tr>
+                    <td width="33%" style="text-align: center; color: #888888; font-size: 14px;">Jam Buka<br><span style="color: #333333;">08.00</span></td>
+                    <td width="33%" style="text-align: center; color: #888888; font-size: 14px;">Jam Tutup<br><span style="color: #333333;">17.00</span></td>
+                    <td width="33%" style="text-align: center; color: #ffffff; font-size: 14px; padding: 5px; background-color: {{ $items->status_des == 'Buka' ? '#4CAF50' : '#f44336' }};">
+                        {{ $items->status_des == 'Buka' ? 'Buka' : 'Tutup' }}
+                    </td>
+                </tr>
+            </table>
+            <hr style="border: 0; border-top: 1px solid #eaeaea; margin: 10px 0;">
+            <table width="100%" cellspacing="5">
+                <tr>
+                    <td style="color: #888888; font-size: 14px;">Harga Tiket</td>
+                    <td style="text-align: right;"><a href="{{ route('cari_wisata', ['destinasi' => $items->id_destinasi]) }}" style="background-color: #007BFF; padding: 8px 15px; border-radius: 5px; text-decoration: none; color: #ffffff;">Pesan</a></td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="color: #555555;">Rp7.000 s/d Rp15.000</td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    @endforeach
+</table>
 
 </body>
-
 </html>
