@@ -51,12 +51,23 @@ class DetailWisataController extends Controller
             // cek inputan waktu sekarang
             $cek_waktu = Carbon::now()->format('H:i:s');
             // validasi tanggal
-            if ($tanggal_input <= $cek_tanggal) {
-                if ($tanggal_input == $cek_tanggal) {
-                    if ($tanggal_waktu < $cek_waktu) {
-                        return redirect()->route('app')->with(['error' => 'Waktu tidak sesuai dengan waktu sekarang!']);
-                    }
+            if ($tanggal_input == $cek_tanggal) {
+                 if ($cek_waktu > $tanggal_waktu) {
+                    return redirect()->route('app')->with(['error' => 'Waktu tidak sesuai dengan waktu sekarang!']);
                 }
+            }
+            if ($tanggal_input < $cek_tanggal) {
+                // if ($tanggal_input == $cek_tanggal) {
+                //     if ($cek_waktu > $tanggal_waktu) {
+                //         if ($cek_waktu > $tanggal_waktu) {
+                //             return redirect()->route('app')->with(['error' => 'Waktu tidak sesuai dengan waktu sekarang!']);
+                //         }
+                //         return redirect()->route('app')->with(['error' => 'Waktu tidak sesuai dengan waktu sekarang!']);
+                //     }
+                // }
+                // if ($cek_waktu > $tanggal_waktu) {
+                //     return redirect()->route('app')->with(['error' => 'Waktu tidak sesuai dengan waktu sekarang!']);
+                // }
                 return redirect()->route('app')->with(['error' => 'Tanggal tidak sesuai dengan tanggal sekarang!']);
 
             }

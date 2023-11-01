@@ -50,8 +50,9 @@ class GoogleController extends Controller
                 'password' => Hash::make('password'),
                 'role' => 'user',
             ]);
-            
+
             return redirect("login")->with(['Log-success' => 'Selamat! Akun anda telah terdaftar']);
         }
     }
+
 }
