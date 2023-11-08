@@ -43,13 +43,27 @@ class GoogleController extends Controller
             return redirect()->route('beranda');
         } else {
 
-            User::create([
+            $user = User::create([
                 'name' => $user->name,
                 'email' => $user->email,
                 'nohp' => '0849124',
                 'password' => Hash::make('password'),
                 'role' => 'user',
             ]);
+            if (auth()->attempt($user)) {
+                if (Auth::user()->role == 'admin') {
+                    return redirect()->route('dashboard');
+                } elseif (Auth::user()->role == 'user') {
+                    return redirect()->route('app');
+                } elseif (Auth::user()->role == 'mitra') {
+                    return redirect()->route('dash.des');
+                } else {
+                    return redirect()->route('login');
+                }
+            } else {
+                return redirect()->route('login')->with(['Log-error' => 'Email/Password Yang Anda Masukkan Salah!']);
+            }
+            return redirect()->route('beranda');
 
             return redirect("login")->with(['Log-success' => 'Selamat! Akun anda telah terdaftar']);
         }

@@ -4,6 +4,7 @@ use App\Http\Controllers\FacebookController;
 use App\Http\Controllers\GoogleController;
 use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\RiwayatPesananController;
+use App\Http\Controllers\VerifikasiEmailController;
 use App\Models\newsletter;
 use Illuminate\Support\Facades\Route;
 
@@ -17,6 +18,12 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::get('test', function () {
+    return view('invoice');
+});
+// verifikasi email
+Route::get('verifikasi/{id}',[VerifikasiEmailController::class,'email'])->name('verification.resend');
 
 Route::post('custom-registration', [App\Http\Controllers\Auth\RegisterController::class, 'customRegistration'])->name('register.custom');
 
@@ -100,6 +107,8 @@ Route::get('/invoice', [App\Http\Controllers\InvoiceController::class, 'show'])-
 // Route::get('/invoice', [App\Http\Controllers\InvoiceController::class, 'show'])->name('show-invoice');
 // riwayat pesanan
 Route::get('riwayat-pesanan',[RiwayatPesananController::class,'index'])->name('riwayat.pesanan');
+Route::get('riwayat-pesanan/detail/{id}',[RiwayatPesananController::class,'show'])->name('riwayat.pesanan-detail');
+Route::get('riwayat-pesanan/download',[RiwayatPesananController::class,'download'])->name('riwayat.pesanan-download');
 // google
 Route::get('auth/google',[GoogleController::class,'redirectToGoogle'])->name('google.login');
 Route::get('auth/google/callback',[GoogleController::class,'handleGoogleCallback'])->name('google.callback');
@@ -213,7 +222,8 @@ Route::prefix('mitra')->middleware('mitra')->group(function () {
     //Transaksi
     Route::get('/transaksi', [App\Http\Controllers\Backend\DetailtransController::class, 'index'])->name('mitra.trans');
 });
+Route::delete('/transaksi/delete/{id}', [App\Http\Controllers\Backend\DetailtransController::class, 'destroy'])->name('transksi.destroy');
 
-Route::prefix('user')->middleware('user')->group(function () {
-    Route::get('/home', [App\Http\Controllers\HomeController::class, 'indfex'])->name('home');
-});
+// Route::prefix('user')->middleware('user')->group(function () {
+//     Route::get('/home', [App\Http\Controllers\HomeController::class, 'indfex'])->name('home');
+// });
