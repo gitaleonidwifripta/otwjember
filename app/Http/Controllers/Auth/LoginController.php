@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
@@ -59,7 +60,10 @@ class LoginController extends Controller
             $loginType => $request->email,
             'password' => $request->password
         ];
+        if (User::where('email',$request->email)->first()->status == '0') {
+            return redirect()->route('login')->with(['Log-error' => 'Email anda belum diverifikasi!']);
 
+        }
         if (auth()->attempt($login)) {
             if (Auth::user()->role == 'admin') {
                 return redirect()->route('dashboard');
@@ -73,6 +77,6 @@ class LoginController extends Controller
         } else {
             return redirect()->route('login')->with(['Log-error' => 'Email/Password Yang Anda Masukkan Salah!']);
         }
-        // 
+        //
     }
 }

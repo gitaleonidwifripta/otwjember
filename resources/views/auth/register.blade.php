@@ -95,10 +95,6 @@
                                             <a href="{{ route('google.login') }}" class="btn btn-danger mb-3"><i class="fa-brands fa-google"></i> Google</a>
                                         </div>
 
-                                        <div class="d-grid gap-2">
-                                            <a href="{{ route('facebook.index') }}" class="btn btn-primary active mb-3"><i class="fa-brands fa-facebook"></i> Facebook</a>
-                                        </div>
-
                                         <div style="text-align:center">Sudah punya akun? <a href="{{ route('login') }}" class="link-info">Masuk</a></div>
 
                                     </form>

@@ -2,8 +2,8 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
         <div class="container">
             <div class="d-flex">
-                <img class="icon-otw" src="{{ 'assets/pict/icon-otw.png' }}" alt="Icon OTW">
-                <img class="icon-logo" src="{{ 'assets/pict/logo-otw.png' }}" alt="Icon OTW">
+                <img class="icon-otw" src="{{ asset('assets/pict/icon-otw.png') }}" alt="Icon OTW">
+                <img class="icon-logo" src="{{ asset('assets/pict/logo-otw.png') }}" alt="Icon OTW">
             </div>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>

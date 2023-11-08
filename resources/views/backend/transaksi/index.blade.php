@@ -86,21 +86,20 @@
                         @foreach ($detail_transaksi as $items)
                         <tr>
                             <th>{{$items->id_detailtransaksi}}</th>
-                            <th>{{$items->transaksi->id_transaksi}}</th>
-                            <th>{{$items->transaksi->tgl_transaksi}}</th>
-                            <th>{{$items->transaksi->total_bayar}}</th>
-                            <th>{{$items->transaksi->status}}</th>
-                            <th>{{$items->transaksi->metode_bayar}}</th>
-                            <th>{{$items->transaksi->id_user}}</th>
+                            <th>{{$items->id_transaksi}}</th>
+                            <th>{{$items->tgl_transaksi}}</th>
+                            <th>{{$items->total_bayar}}</th>
+                            <th>{{$items->status}}</th>
+                            <th>{{$items->metode_bayar}}</th>
+                            <th>{{$items->id_user}}</th>
                             <th>{{$items->jumlah_tiket}}</th>
-                            <th>{{$items->destinasi->nama_des}}</th>
+                            <th>{{$items->nama_des}}</th>
                             <td class="table-actions">
-                                <a href="#" class="table-action" data-toggle="tooltip" data-original-title="Edit product">
-                                    <button type="button" class="btn btn-success"><i class="fas fa-user-edit"></i></button>
-                                </a>
-                                <a href="#" class="table-action table-action-delete" data-toggle="tooltip" data-original-title="Delete product" onclick="return confirm('Apakah Anda yakin ingin menghapus data?')">
-                                    <button type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button>
-                                </a>
+                                <form action="{{ route('transksi.destroy',$items->id_transaksi) }}" class="p-0 m-0" method="POST" onsubmit="return confirm('Move data to trash? ')">
+                                    @method('delete')
+                                    @csrf
+                                    <button  class="btn btn-sm font-sm btn-danger rounded"> <i class="fas fa-trash"></i> </button>
+                                </form>
                             </td>
                         </tr>
                         @endforeach

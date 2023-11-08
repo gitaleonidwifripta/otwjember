@@ -100,8 +100,8 @@
                         <td class="invoice">{{ $item->jumlah_tiket*$item->harga_tiket }}</td>
                     </tr>
                     @endforeach
-                    
-                    
+
+
                     <tr>
                         <td class="invoice"></td>
                         <td class="invoice"></td>
