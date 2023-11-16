@@ -43,14 +43,18 @@ class GoogleController extends Controller
             return redirect()->route('beranda');
         } else {
 
-            $user = User::create([
+            $adduser = User::create([
                 'name' => $user->name,
                 'email' => $user->email,
                 'nohp' => '0849124',
                 'password' => Hash::make('password'),
                 'role' => 'user',
             ]);
-            if (auth()->attempt($user)) {
+            $login = [
+                'email' => $adduser->email,
+                'password' => 'password',
+            ];
+            if (Auth::attempt($login)) {
                 if (Auth::user()->role == 'admin') {
                     return redirect()->route('dashboard');
                 } elseif (Auth::user()->role == 'user') {

@@ -19,14 +19,16 @@ class DetailtransController extends Controller
                             ->join('tiket','tiket.id_tiket','detail_transaksi.id_tiket')
                             ->join('transaksi','transaksi.id_transaksi','detail_transaksi.id_transaksi')
                             ->where('destinasi.id',auth()->user()->id)
-                            ->join('destinasi','destinasi.id_destinasi','detail_transaksi.id_destinasi')->get();
+                            ->join('destinasi','destinasi.id_destinasi','detail_transaksi.id_destinasi')
+                            ->orderByDesc('detail_transaksi.id_detailtransaksi')
+                            ->get();
 
         }else{
             $detail_transaksi = DetailWisata::select('detail_transaksi.*','tiket.jenis_tiket','tiket.harga_tiket','destinasi.nama_des','destinasi.id as id_user','destinasi.alamat','transaksi.*')
-                        ->join('tiket','tiket.id_tiket','detail_transaksi.id_tiket')
-                        ->join('transaksi','transaksi.id_transaksi','detail_transaksi.id_transaksi')
-                        ->join('destinasi','destinasi.id_destinasi','detail_transaksi.id_destinasi')
-                        ->get();
+            ->join('tiket','tiket.id_tiket','detail_transaksi.id_tiket')
+            ->join('transaksi','transaksi.id_transaksi','detail_transaksi.id_transaksi')
+            ->join('destinasi','destinasi.id_destinasi','detail_transaksi.id_destinasi')
+            ->get();
 
         }
         return view('backend/transaksi.index', compact('detail_transaksi'));
