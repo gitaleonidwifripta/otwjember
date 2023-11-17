@@ -1,12 +1,27 @@
 @extends('backend/layouts.template')
 @section('content')
 @include('backend/layouts.navbar')
-<script type="text/javascript">
-    $.noConflict();
-    jQuery(document).ready(function($) {
-        $('#myTable').DataTable();
-    });
-</script>
+@push('custom')
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css">
+    <style>
+        .page-item.active .page-link{
+            background-color: #219ebc !important;
+            border-color: #8ecae6;
+        }
+    </style>
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#example').DataTable(
+                {
+                    order: [[1, 'desc']]
+                }
+            );
+        })
+    </script>
+
+@endpush
 <!-- Header -->
 <div class="header pb-6">
     <div class="container-fluid">
@@ -68,7 +83,7 @@
                     </p>
                 </div>
                 <div class="table-responsive py-4 p-3">
-                    <table class="table table-flush" id="myTable">
+                    <table class="table table-flush" id="example">
                         <thead class="thead-light">
                             <tr>
                                 <th>No</th>
