@@ -13,7 +13,7 @@ class GambarController extends Controller
 {
     public function index()
     {
-        $gambar = gambar_destinasi::with('destinasi')->get();
+        $gambar = gambar_destinasi::whereHas('destinasi')->get();
         return view('mitra/gambar.index', compact('gambar'));
     }
 

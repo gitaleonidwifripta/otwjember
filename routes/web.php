@@ -168,7 +168,7 @@ Route::prefix('admin')->middleware('admin')->group(function () {
     Route::get('/pengguna', [App\Http\Controllers\Backend\PenggunaController::class, 'index'])->name('admin.peng');
     Route::get('/tambah_pengguna', [App\Http\Controllers\Backend\PenggunaController::class, 'create'])->name('admin.peng.create');
     Route::POST('/store_pengguna', [App\Http\Controllers\Backend\PenggunaController::class, 'store'])->name('admin.peng.store');
-
+    Route::get('/delete/pengguna/{id}', [App\Http\Controllers\Backend\PenggunaController::class, 'delete'])->name('admin.pengguna.delete');
     //Transaksi
     Route::get('/transaksi', [App\Http\Controllers\Backend\DetailtransController::class, 'index'])->name('admin.trans');
 

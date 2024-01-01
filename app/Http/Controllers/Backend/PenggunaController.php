@@ -46,4 +46,13 @@ class PenggunaController extends Controller
 
         return redirect()->route('admin.peng')->with('success', 'Pengguna Baru Berhasil Ditambahkan!');
     }
+
+    public function delete($id)
+    {
+        $user = User::find($id);
+        $user->delete();
+
+        return back();
+
+    }
 }

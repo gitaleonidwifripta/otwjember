@@ -19,6 +19,6 @@ class gambar_destinasi extends Model
 
     public function destinasi()
     {
-        return $this->belongsTo('App\\Models\\destinasi', 'id_destinasi');
+        return $this->belongsTo(destinasi::class, 'id_destinasi');
     }
 }

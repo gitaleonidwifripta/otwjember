@@ -83,7 +83,7 @@
                         @foreach ($gambar as $items)
                         <tr>
                             <th>{{$items->id_gambar_des}}</th>
-                            <th>{{$items->destinasi->nama_des}}</th>
+                           <th> {{ $items->destinasi->nama_des }}</th>
                             <th><a href="{{ asset('upload/' . $items->gambar_des) }}" target="__blank">{{ $items->gambar_des }}</a></th>
                             <td class="table-actions">
                                 <a href="{{route('admin.gambar.edit', $items->id_gambar_des)}}" class="table-action" data-toggle="tooltip" data-original-title="Edit product">
