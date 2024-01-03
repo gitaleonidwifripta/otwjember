@@ -58,7 +58,7 @@ class DestinasiController extends Controller
         }
         return redirect()->route('admin.des')->with('success', 'Destinasi Wisata Berhasil Ditambahkan!');
     }
-
+// nmpilkan form edit destinasi
     public function edit($id_destinasi)
     {
         $destinasi = destinasi::with('kategori', 'User')->where('id_destinasi', $id_destinasi)->first();
@@ -66,7 +66,7 @@ class DestinasiController extends Controller
         $user = User::all();
         return view('backend/destinasi.edit', compact('destinasi', 'kategori', 'user'));
     }
-
+// proses mengubah
     public function update(Request $request, $id_destinasi)
     {
         $destinasi =  DB::table('destinasi')->where('id_destinasi', $id_destinasi)->first();
@@ -85,7 +85,7 @@ class DestinasiController extends Controller
 
         return redirect()->route('admin.des')->with('update', 'Destinasi Wisata Berhasil Diupdate!');
     }
-
+// proses hapus 
     public function destroy($id_destinasi)
     {
         $destinasi = destinasi::find($id_destinasi);

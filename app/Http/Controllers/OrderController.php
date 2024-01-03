@@ -13,11 +13,13 @@ use Carbon\Carbon;
 
 class OrderController extends Controller
 {
-    public function index()
+    // menampilkan detail transaksi
+    public function index() 
     {
         $detail_transaksi = detail_transaksi::with('destinasi', 'transaksi', 'tiket')->get();
         return view('form_order', compact('detail_transaksi'));
     }
+    // proses melakukan order
     public function store(Request $request)
     {
         $request->validate([

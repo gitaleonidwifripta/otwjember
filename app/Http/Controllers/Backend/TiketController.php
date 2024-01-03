@@ -11,12 +11,13 @@ use Auth;
 
 class TiketController extends Controller
 {
+    // nampilkan form tiket 
     public function index()
     {
         $tiket = tiket::with('destinasi')->get();
         return view('backend/tiket.index', compact('tiket'));
     }
-
+// nampilkan halaman tambah tiket
     public function create()
     {
         $cek = DB::table('tiket')->get('id_tiket')->last();
@@ -32,7 +33,7 @@ class TiketController extends Controller
         $destinasi = destinasi::all();
         return view('backend/tiket.create', compact('id_tiket', 'tiket', 'destinasi'));
     }
-
+// proses nambah tiket
     public function store(Request $request)
     {
         DB::table('tiket')->insert([
@@ -45,14 +46,14 @@ class TiketController extends Controller
 
         return redirect()->route('admin.tiket')->with('success', 'Tiket Wisata Berhasil Ditambahkan!');
     }
-
+// nampilkan form edit tiket
     public function edit($id_tiket)
     {
         $tiket = tiket::with('destinasi')->where('id_tiket', $id_tiket)->first();
         $destinasi = destinasi::all();
         return view('backend/tiket.edit', compact('tiket', 'destinasi'));
     }
-
+// proses edit
     public function update(Request $request, $id_tiket)
     {
         $tiket =  DB::table('tiket')->where('id_tiket', $id_tiket)->first();
@@ -67,7 +68,7 @@ class TiketController extends Controller
 
         return redirect()->route('admin.tiket')->with('update', 'Tiket Wisata Berhasil Diupdate!');
     }
-
+// proses menghapus tiket
     public function destroy($id_tiket)
     {
         $tiket = tiket::find($id_tiket);
